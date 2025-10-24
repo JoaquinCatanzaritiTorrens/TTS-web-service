@@ -1,0 +1,194 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "contact": "Contacto"
+    },
+    "home": {
+        "hero": {
+            "title": "Trabaja Inteligente, No Más Duro",
+            "subtitle": "Herramientas potentes impulsadas por IA que automatizan tus tareas diarias y aumentan la productividad. Desde edición de audio hasta procesamiento de documentos, lo tenemos cubierto.",
+            "cta": "Iniciar Prueba Gratuita",
+            "ctaSecondary": "Ver Precios"
+        },
+        "socialProof": {
+            "title": "Confianza de profesionales en todo el mundo",
+            "subtitle": "Únete a miles de empresas que ahorran horas cada día"
+        },
+        "useCases": {
+            "title": "Perfecto para Cada Profesional",
+            "subtitle": "Ya seas creador de contenido, empresario o freelancer",
+            "cases": [
+                {
+                    "title": "Creadores de Contenido",
+                    "description": "Genera locuciones, edita audio y crea visuales impactantes con herramientas impulsadas por IA.",
+                    "icon": "mic"
+                },
+                {
+                    "title": "Empresarios",
+                    "description": "Automatiza el procesamiento de documentos, resume informes y optimiza flujos de trabajo.",
+                    "icon": "business"
+                },
+                {
+                    "title": "Freelancers",
+                    "description": "Entrega resultados más rápidos con edición de PDF, texto a voz y herramientas de generación de imágenes.",
+                    "icon": "freelance"
+                }
+            ]
+        },
+        "benefits": {
+            "title": "Por Qué Elegir Nuestra Plataforma",
+            "subtitle": "Herramientas simples y potentes que simplemente funcionan",
+            "items": [
+                {
+                    "title": "Ahorra Tiempo",
+                    "description": "Automatiza tareas repetitivas y enfócate en lo que realmente importa",
+                    "icon": "time"
+                },
+                {
+                    "title": "Calidad Profesional",
+                    "description": "Resultados de nivel empresarial sin la complejidad empresarial",
+                    "icon": "quality"
+                },
+                {
+                    "title": "Fácil de Usar",
+                    "description": "Sin curva de aprendizaje. Comienza a ser productivo en minutos",
+                    "icon": "easy"
+                },
+                {
+                    "title": "Asequible",
+                    "description": "Herramientas profesionales a una fracción de los costos tradicionales",
+                    "icon": "price"
+                }
+            ]
+        },
+        "features": {
+            "title": "Todo Lo Que Necesitas",
+            "subtitle": "Suite completa de herramientas de productividad",
+            "items": [
+                {
+                    "title": "IA Texto a Voz",
+                    "description": "Convierte texto a audio natural en múltiples idiomas"
+                },
+                {
+                    "title": "Resumidor de Documentos",
+                    "description": "Extrae ideas clave de documentos largos al instante"
+                },
+                {
+                    "title": "Generación de Imágenes",
+                    "description": "Crea visuales profesionales con generación impulsada por IA"
+                },
+                {
+                    "title": "Editor de Audio",
+                    "description": "Herramientas profesionales de edición de audio en tu navegador"
+                },
+                {
+                    "title": "Herramientas PDF",
+                    "description": "Edita, fusiona y optimiza PDFs sin esfuerzo"
+                },
+                {
+                    "title": "Y Más",
+                    "description": "Nuevas herramientas agregadas regularmente basadas en comentarios de usuarios"
+                }
+            ]
+        },
+        "cta": {
+            "title": "¿Listo para Trabajar Más Inteligente?",
+            "subtitle": "Únete a miles de profesionales que ya ahorran tiempo con nuestras herramientas",
+            "button": "Iniciar Tu Prueba Gratuita"
+        }
+    },
+    "header": {
+        "login": "Iniciar sesión",
+        "logout": "Cerrar sesión"
+    },
+    "drawer": {
+        "navigation": "Navegación",
+        "preferences": "Preferencias",
+        "account": "Cuenta",
+        "notLoggedIn": "No has iniciado sesión"
+    },
+    "theme": {
+        "switchToLight": "Cambiar a modo claro",
+        "switchToDark": "Cambiar a modo oscuro"
+    },
+    "language": {
+        "en": "English",
+        "es": "Español"
+    },
+    "login": {
+        "title": "Iniciar sesión",
+        "email": "Email",
+        "password": "Contraseña",
+        "submit": "Ingresar",
+        "loading": "Ingresando...",
+        "noAccount": "¿No tienes cuenta? ",
+        "registerLink": "Regístrate aquí",
+        "errorFieldsRequired": "Por favor, completa todos los campos.",
+        "errorLogin": "Error al iniciar sesión."
+    },
+    "register": {
+        "title": "Registro",
+        "email": "Email",
+        "password": "Contraseña",
+        "verificationCode": "Código de verificación",
+        "sendCode": "Enviar código de verificación",
+        "sendingCode": "Enviando código...",
+        "verifyCode": "Verificar código",
+        "verifyingCode": "Verificando...",
+        "resendPrefix": "Reenviar nuevo código en: ",
+        "resendSuffix": "s",
+        "resendCode": "Reenviar nuevo código",
+        "alreadyAccount": "¿Ya tienes cuenta? ",
+        "loginLink": "Inicia sesión",
+        "errorIncompleteFields": "Por favor completa todos los campos.",
+        "errorRegister": "Error al registrar usuario."
+    },
+    "footer": {
+        "reservedRights": "© {{year}} Joaquin Catanzariti Torrens. Todos los derechos reservados.",
+        "linkedIn": "LinkedIn",
+        "gitHub": "GitHub",
+        "privacyPolicy": "Política de Privacidad",
+        "termsOfService": "Términos de Servicio",
+        "cookies": "Cookies"
+    },
+    "legal": {
+        "privacyPolicy": {
+            "title": "Política de Privacidad",
+            "p1": "Tu privacidad es importante para nosotros. Este sitio web y sus proyectos asociados pueden recopilar información personal como tu nombre, dirección de correo electrónico y credenciales de inicio de sesión con el propósito de autenticarte, comunicarte y mejorar nuestros servicios.",
+            "p2": "Los datos se recopilan a través de formularios, cookies y herramientas de terceros como analíticas. Nunca venderemos tus datos a terceros.",
+            "p3": "Al usar nuestros servicios, aceptas la recopilación y el uso de la información de acuerdo con esta política. Tienes derecho a acceder, modificar o eliminar tus datos contactándonos.",
+            "p4": "Esta política puede actualizarse periódicamente. Por favor revísala regularmente."
+        },
+        "cookiesPolicy": {
+            "title": "Política de Cookies",
+            "p1": "Utilizamos cookies y tecnologías de seguimiento similares para mejorar tu experiencia de navegación, analizar el tráfico y proporcionar contenido personalizado.",
+            "p2": "Al usar este sitio web, consientes el uso de cookies. Puedes deshabilitarlas desde la configuración de tu navegador, pero algunas funciones del sitio pueden no funcionar correctamente.",
+            "p3": "Las cookies se utilizan para sesiones de inicio de sesión, preferencias y análisis. También pueden establecerse cookies de servicios de terceros en tu dispositivo.",
+            "p4": "Puedes administrar o revocar el consentimiento de cookies en cualquier momento eliminando las cookies en tu navegador."
+        },
+        "termsOfService": {
+            "title": "Términos de Servicio",
+            "p1": "Al acceder o usar este sitio web y sus proyectos relacionados, aceptas estar sujeto a estos Términos de Servicio. Si no estás de acuerdo, por favor no uses nuestros servicios.",
+            "p2": "Eres responsable de cualquier actividad que ocurra bajo tus credenciales de inicio de sesión. No compartas tu contraseña con otros.",
+            "p3": "Nos reservamos el derecho de modificar o discontinuar cualquier servicio en cualquier momento sin previo aviso.",
+            "p4": "El uso indebido del servicio, incluyendo intentos de acceder a datos no autorizados o interrumpir la funcionalidad del servicio, puede resultar en suspensión o terminación del acceso.",
+            "p5": "Estos términos pueden actualizarse ocasionalmente. El uso continuado implica aceptación de los cambios."
+        }
+    },
+    "hero": {
+        "title": "Joaquin Catanzariti Torrens",
+        "subtitle": "Desarrollador Full Stack en constante aprendizaje, con interés genuino por las tecnologías emergentes y las buenas prácticas de desarrollo. Paralelamente a mi actividad profesional, impulso proyectos propios enfocados en resolver problemas concretos mediante soluciones web."
+    },
+    "contact": {
+        "getInTouch": "Ponte en contacto",
+        "name": "Nombre",
+        "email": "Email",
+        "message": "Mensaje",
+        "send": "Enviar Mensaje",
+        "sending": "Enviando...",
+        "errorFieldsRequired": "Todos los campos son obligatorios.",
+        "errorSending": "Error al enviar el formulario de contacto.",
+        "errorSubmission": "Error al enviar el formulario.",
+        "successMessage": "Mensaje enviado exitosamente."
+    }
+}

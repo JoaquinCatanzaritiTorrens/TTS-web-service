@@ -1,0 +1,194 @@
+{
+    "nav": {
+        "home": "Home",
+        "contact": "Contact"
+    },
+    "home": {
+        "hero": {
+            "title": "Work Smart, Not Harder",
+            "subtitle": "Powerful AI-driven tools that automate your daily tasks and boost productivity. From audio editing to document processing, we've got you covered.",
+            "cta": "Start Free Trial",
+            "ctaSecondary": "View Pricing"
+        },
+        "socialProof": {
+            "title": "Trusted by professionals worldwide",
+            "subtitle": "Join thousands of businesses saving hours every day"
+        },
+        "useCases": {
+            "title": "Perfect for Every Professional",
+            "subtitle": "Whether you're a content creator, business owner, or freelancer",
+            "cases": [
+                {
+                    "title": "Content Creators",
+                    "description": "Generate voiceovers, edit audio, and create stunning visuals with AI-powered tools.",
+                    "icon": "mic"
+                },
+                {
+                    "title": "Business Owners",
+                    "description": "Automate document processing, summarize reports, and streamline workflows.",
+                    "icon": "business"
+                },
+                {
+                    "title": "Freelancers",
+                    "description": "Deliver faster results with PDF editing, text-to-speech, and image generation tools.",
+                    "icon": "freelance"
+                }
+            ]
+        },
+        "benefits": {
+            "title": "Why Choose Our Platform",
+            "subtitle": "Simple, powerful tools that just work",
+            "items": [
+                {
+                    "title": "Save Time",
+                    "description": "Automate repetitive tasks and focus on what matters most",
+                    "icon": "time"
+                },
+                {
+                    "title": "Professional Quality",
+                    "description": "Enterprise-grade results without the enterprise complexity",
+                    "icon": "quality"
+                },
+                {
+                    "title": "Easy to Use",
+                    "description": "No learning curve. Start being productive in minutes",
+                    "icon": "easy"
+                },
+                {
+                    "title": "Affordable",
+                    "description": "Professional tools at a fraction of traditional costs",
+                    "icon": "price"
+                }
+            ]
+        },
+        "features": {
+            "title": "Everything You Need",
+            "subtitle": "Comprehensive suite of productivity tools",
+            "items": [
+                {
+                    "title": "AI Text-to-Speech",
+                    "description": "Convert text to natural-sounding audio in multiple languages"
+                },
+                {
+                    "title": "Document Summarizer",
+                    "description": "Extract key insights from long documents instantly"
+                },
+                {
+                    "title": "Image Generation",
+                    "description": "Create professional visuals with AI-powered generation"
+                },
+                {
+                    "title": "Audio Editor",
+                    "description": "Professional audio editing tools in your browser"
+                },
+                {
+                    "title": "PDF Tools",
+                    "description": "Edit, merge, and optimize PDFs effortlessly"
+                },
+                {
+                    "title": "And More",
+                    "description": "New tools added regularly based on user feedback"
+                }
+            ]
+        },
+        "cta": {
+            "title": "Ready to Work Smarter?",
+            "subtitle": "Join thousands of professionals already saving time with our tools",
+            "button": "Start Your Free Trial"
+        }
+    },
+    "header": {
+        "login": "Login",
+        "logout": "Logout"
+    },
+    "drawer": {
+        "navigation": "Navigation",
+        "preferences": "Preferences",
+        "account": "Account",
+        "notLoggedIn": "You are not logged in"
+    },
+    "theme": {
+        "switchToLight": "Switch to light mode",
+        "switchToDark": "Switch to dark mode"
+    },
+    "language": {
+        "en": "English",
+        "es": "Español"
+    },
+    "login": {
+        "title": "Login",
+        "email": "Email",
+        "password": "Password",
+        "submit": "Login",
+        "loading": "Logging in...",
+        "noAccount": "Don't have an account? ",
+        "registerLink": "Register here",
+        "errorFieldsRequired": "Please fill in all fields.",
+        "errorLogin": "Error logging in."
+    },
+    "register": {
+        "title": "Register",
+        "email": "Email",
+        "password": "Password",
+        "verificationCode": "Verification Code",
+        "sendCode": "Send verification code",
+        "sendingCode": "Sending code...",
+        "verifyCode": "Verify code",
+        "verifyingCode": "Verifying...",
+        "resendPrefix": "Resend new code in: ",
+        "resendSuffix": "s",
+        "resendCode": "Resend new code",
+        "alreadyAccount": "Already have an account? ",
+        "loginLink": "Login",
+        "errorIncompleteFields": "Please fill in all fields.",
+        "errorRegister": "Error registering user."
+    },
+    "footer": {
+        "reservedRights": "© {{year}} Joaquin Catanzariti Torrens. All rights reserved.",
+        "linkedIn": "LinkedIn",
+        "gitHub": "GitHub",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfService": "Terms of Service",
+        "cookies": "Cookies"
+    },
+    "legal": {
+        "privacyPolicy": {
+            "title": "Privacy Policy",
+            "p1": "Your privacy is important to us. This website and its associated projects may collect personal information such as your name, email address, and login credentials for the purpose of authentication, communication, and improving our services.",
+            "p2": "Data is collected via forms, cookies, and third-party tools like analytics. We will never sell your data to third parties.",
+            "p3": "By using our services, you agree to the collection and use of information in accordance with this policy. You have the right to access, modify, or delete your data by contacting us.",
+            "p4": "This policy may be updated periodically. Please review it regularly."
+        },
+        "cookiesPolicy": {
+            "title": "Cookies Policy",
+            "p1": "We use cookies and similar tracking technologies to enhance your browsing experience, analyze traffic, and provide personalized content.",
+            "p2": "By using this website, you consent to the use of cookies. You may choose to disable cookies through your browser settings, but some features of the site may not function properly.",
+            "p3": "Cookies are used for login sessions, preferences, and analytics. Third-party services may also set cookies on your device.",
+            "p4": "You can manage or revoke cookie consent at any time by clearing cookies in your browser."
+        },
+        "termsOfService": {
+            "title": "Terms of Service",
+            "p1": "By accessing or using this website and its related projects, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.",
+            "p2": "You are responsible for any activity that occurs under your login credentials. Do not share your password with others.",
+            "p3": "We reserve the right to modify or discontinue any service at any time without prior notice.",
+            "p4": "Misuse of the service, including attempts to access unauthorized data or disrupt service functionality, may result in suspension or termination of access.",
+            "p5": "These terms may be updated occasionally. Continued use implies acceptance of the changes."
+        }
+    },
+    "hero": {
+        "title": "Joaquin Catanzariti Torrens",
+        "subtitle": "Full Stack Developer committed to continuous learning, with a genuine interest in emerging technologies and development best practices. Alongside my professional work, I lead personal projects focused on solving real-world problems through web-based solutions."
+    },
+    "contact": {
+        "getInTouch": "Get in Touch",
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send Message",
+        "sending": "Sending...",
+        "errorFieldsRequired": "All fields are required.",
+        "errorSending": "Error sending contact form.",
+        "errorSubmission": "Error submitting form.",
+        "successMessage": "Message sent successfully."
+    }
+}

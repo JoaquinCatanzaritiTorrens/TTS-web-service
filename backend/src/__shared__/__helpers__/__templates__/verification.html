@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias por Contactarnos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        .message {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f1f1f1;
+            border-left: 6px solid #4CAF50;
+            font-style: italic;
+            font-size: 1.5em;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Verification Code</h1>
+        <p>This code will expire after 5 minutes or if you request a new code:</p>
+        <div class="message">
+            {{code}}
+        </div>
+        <p>Sincerely,<br>Joaquin Catanzariti Torrens</p>
+    </div>
+</body>
+
+</html>

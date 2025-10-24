@@ -1,0 +1,50 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "6001:6000"
+    restart: unless-stopped
+    container_name: base-frontend
+    environment:
+      SERVER_NAME: ${SERVER_NAME}
+      BACKEND_PORT: ${BACKEND_PORT}
+    networks:
+      - base-network
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5001:5000"
+    restart: unless-stopped
+    container_name: base-backend
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      JWT_SECRET: ${JWT_SECRET}
+      BACKEND_PORT: ${BACKEND_PORT}
+      DB_PORT: ${DB_PORT}
+      DB_HOST: ${DB_HOST}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      EMAIL_SENDER: ${EMAIL_SENDER}
+      EMAIL_SENDER_PASSWORD: ${EMAIL_SENDER_PASSWORD}
+      EMAIL_SENDER_PORT: ${EMAIL_SENDER_PORT}
+      EMAIL_SENDER_HOST: ${EMAIL_SENDER_HOST}
+      REDIS_URL: ${REDIS_URL}
+    depends_on:
+      - redis
+    networks:
+      - base-network
+
+  redis:
+    image: redis:latest
+    restart: unless-stopped
+    container_name: base-redis
+    networks:
+      - base-network
+
+networks:
+  base-network:
+    driver: bridge

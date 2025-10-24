@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks to Contact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            margin-top: 15px;
+            padding: 12px;
+            background: #e0f7fa;
+            border-left: 4px solid #0097a7;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>¡Hi {{name}}!</h1>
+        <p>Thank you for taking the time to write to me. I have received your message and will get back to you as soon
+            as possible.</p>
+        <p>This is the message you sent:</p>
+        <div class="message">
+            {{message}}
+        </div>
+        <p>Sincerely,<br>Joaquin Catanzariti Torrens</p>
+    </div>
+</body>
+
+</html>

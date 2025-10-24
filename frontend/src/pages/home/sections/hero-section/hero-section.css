@@ -1,0 +1,374 @@
+.hero-section {
+    background: linear-gradient(135deg,
+            rgba(59, 130, 246, 0.1) 0%,
+            rgba(147, 51, 234, 0.1) 100%);
+    min-height: 100vh;
+    padding-top: 64px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 600px;
+    padding: 2rem 0;
+}
+
+@media (min-width: 969px) {
+    .hero-content {
+        text-align: left;
+    }
+}
+
+@media (max-width: 968px) {
+    .hero-content {
+        text-align: center;
+    }
+}
+
+.hero-visual {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-visual>div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating-cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fadeInCards 0.8s ease-out forwards;
+}
+
+@keyframes fadeInCards {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.floating-card {
+    position: absolute;
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    animation: float 6s ease-in-out infinite;
+    will-change: transform, border-color, box-shadow;
+}
+
+.floating-card-dark {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.floating-card-dark:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+}
+
+.floating-card-light {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.1);
+}
+
+.floating-card-light:hover {
+    border-color: rgba(37, 99, 235, 0.4);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+}
+
+.floating-card:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.floating-card:nth-child(2) {
+    top: 30%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.floating-card:nth-child(3) {
+    top: 60%;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+.floating-card:nth-child(4) {
+    top: 15%;
+    left: 50%;
+    animation-delay: 3s;
+}
+
+.floating-card:nth-child(5) {
+    bottom: 20%;
+    right: 25%;
+    animation-delay: 4s;
+}
+
+.floating-card:nth-child(6) {
+    bottom: 45%;
+    left: 40%;
+    animation-delay: 5s;
+}
+
+.floating-card:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+.card-icon {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.floating-card-light .card-icon {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.floating-card-dark .card-icon {
+    background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.card-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.floating-card-dark .card-label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.floating-card-light .card-label {
+    color: rgba(30, 41, 59, 0.9);
+    font-weight: 600;
+}
+
+@supports not (-webkit-background-clip: text) {
+    .floating-card-dark .card-icon {
+        color: #60a5fa;
+        background: none;
+    }
+
+    .floating-card-light .card-icon {
+        color: #2563eb;
+        background: none;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(-1deg);
+    }
+
+    75% {
+        transform: translateY(-15px) rotate(0.5deg);
+    }
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    line-height: 1.5;
+    opacity: 0.9;
+    margin: 0 0 2rem;
+}
+
+.hero-buttons {
+    justify-content: flex-start;
+    margin-top: 2rem;
+}
+
+.hero-cta-primary {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-transform: none;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    transition: all 0.3s ease;
+}
+
+.hero-cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.hero-cta-secondary {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-transform: none;
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #3b82f6, #8b5cf6) 1;
+    transition: all 0.3s ease;
+}
+
+.hero-cta-secondary:hover {
+    background: rgba(59, 130, 246, 0.1);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 968px) {
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero-title,
+    .hero-subtitle {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        height: 300px;
+        order: -1;
+    }
+
+    .floating-card {
+        padding: 1rem;
+    }
+
+    .floating-card-dark,
+    .floating-card-light {
+        padding: 1rem;
+    }
+
+    .card-icon {
+        font-size: 1.5rem;
+    }
+
+    .card-label {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 70vh;
+    }
+
+    .hero-visual {
+        height: 250px;
+    }
+
+    .floating-card {
+        padding: 0.75rem;
+    }
+
+    .floating-card-dark,
+    .floating-card-light {
+        padding: 0.75rem;
+    }
+
+    .floating-card:nth-child(4),
+    .floating-card:nth-child(5),
+    .floating-card:nth-child(6) {
+        display: none;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-cta-primary,
+    .hero-cta-secondary {
+        width: auto;
+        min-width: 200px;
+        margin: 0.5rem 0;
+    }
+
+    .hero-section {
+        padding-top: 56px;
+    }
+}

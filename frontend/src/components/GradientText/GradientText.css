@@ -1,0 +1,95 @@
+.gradient-text-component {
+    background-color: transparent !important;
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    margin-bottom: 40px !important;
+}
+
+.gradient-text-component.animated {
+    animation: gradient-shift 3s ease-in-out infinite;
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+}
+
+.MuiTypography-root.gradient-text-component {
+    background-color: transparent !important;
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    margin-bottom: 40px !important;
+}
+
+[data-theme="dark"] .gradient-text-component,
+[data-theme="dark"] .MuiTypography-root.gradient-text-component {
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    background-color: transparent !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    margin-bottom: 40px !important;
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@supports not (background-clip: text) {
+    .gradient-text-component {
+        color: #2563eb !important;
+        background: none !important;
+    }
+
+    [data-theme="dark"] .gradient-text-component {
+        color: #60a5fa !important;
+        background: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .gradient-text-component,
+    .MuiTypography-root.gradient-text-component {
+        margin-bottom: 32px !important;
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .gradient-text-component,
+    .MuiTypography-root.gradient-text-component {
+        margin-bottom: 24px !important;
+        font-size: 1.75rem !important;
+    }
+}

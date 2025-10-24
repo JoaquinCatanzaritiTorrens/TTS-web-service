@@ -1,0 +1,97 @@
+.header-appbar {
+    transition: transform 0.3s ease;
+    z-index: 1300;
+}
+
+.header-hide {
+    transform: translateY(-100%);
+}
+
+.header-toolbar {
+    position: relative;
+    width: 100%;
+}
+
+.header-logo-box {
+    flex: 0 0 auto;
+}
+
+.header-logo-img {
+    max-height: 35px;
+    cursor: pointer;
+}
+
+.header-nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 16px;
+}
+
+.header-nav-button {
+    text-transform: none;
+    position: relative;
+    color: inherit;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 8px 16px;
+    min-width: auto;
+    outline: none !important;
+    transition: none;
+}
+
+.header-nav-button::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: all 0.3s ease-out;
+}
+
+.header-nav-button:hover,
+.header-nav-button:focus,
+.header-nav-button:active {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+    outline: none !important;
+}
+
+.header-nav-button:hover::after,
+.header-nav-button.active::after {
+    left: 0;
+    width: 100%;
+}
+
+.header-right-box {
+    margin-left: auto;
+    flex: 0 0 auto;
+}
+
+.header-user-button {
+    text-transform: none;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    padding: 8px 16px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.header-user-button:hover {
+    background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4) !important;
+}
+
+.header-menu-paper {
+    margin-top: 8px !important;
+}
