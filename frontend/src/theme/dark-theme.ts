@@ -4,24 +4,24 @@ const darkTheme = createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: '#60a5fa',
-            light: '#93c5fd',
-            dark: '#3b82f6',
-            contrastText: '#000000'
-        },
-        secondary: {
-            main: '#a78bfa',
+            main: '#a78bfa', // Purple for voice/audio theme
             light: '#c4b5fd',
             dark: '#8b5cf6',
-            contrastText: '#000000'
+            contrastText: '#ffffff'
+        },
+        secondary: {
+            main: '#06b6d4', // Cyan accent
+            light: '#22d3ee',
+            dark: '#0891b2',
+            contrastText: '#ffffff'
         },
         background: {
-            default: '#0f172a',
-            paper: '#1e293b'
+            default: '#0a0118', // Deep purple-black
+            paper: '#1a0f2e' // Dark purple
         },
         text: {
-            primary: '#f1f5f9',
-            secondary: '#cbd5e1'
+            primary: '#f8fafc',
+            secondary: '#e2e8f0'
         },
         divider: '#334155',
         success: {
@@ -49,24 +49,24 @@ const darkTheme = createTheme({
         fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
         h1: {
             fontWeight: 700,
-            color: '#f1f5f9',
+            color: '#f8fafc',
             letterSpacing: '-0.025em'
         },
         h2: {
             fontWeight: 600,
-            color: '#f1f5f9',
+            color: '#f8fafc',
             letterSpacing: '-0.025em'
         },
         h3: {
             fontWeight: 600,
-            color: '#f1f5f9'
+            color: '#f8fafc'
         },
         body1: {
-            color: '#e2e8f0',
+            color: '#f1f5f9',
             lineHeight: 1.7
         },
         body2: {
-            color: '#cbd5e1',
+            color: '#e2e8f0',
             lineHeight: 1.6
         }
     },
@@ -74,10 +74,10 @@ const darkTheme = createTheme({
         MuiAppBar: {
             styleOverrides: {
                 root: {
-                    backgroundColor: 'rgba(30, 41, 59, 0.95)',
+                    backgroundColor: 'rgba(26, 15, 46, 0.95)',
                     color: '#f1f5f9',
                     boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3)',
-                    borderBottom: '1px solid #334155',
+                    borderBottom: '1px solid rgba(167, 139, 250, 0.2)',
                     backdropFilter: 'blur(8px)',
                     '-webkit-backdrop-filter': 'blur(8px)'
                 }
@@ -88,8 +88,8 @@ const darkTheme = createTheme({
                 root: {
                     borderRadius: '12px',
                     boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2)',
-                    border: '1px solid #334155',
-                    backgroundImage: 'linear-gradient(135deg, #1e293b 0%, #334155 100%)'
+                    border: '1px solid rgba(167, 139, 250, 0.2)',
+                    backgroundImage: 'linear-gradient(135deg, #1a0f2e 0%, #2d1b4e 100%)'
                 }
             }
         },
@@ -131,6 +131,17 @@ const darkTheme = createTheme({
                     '&:hover': {
                         boxShadow: '0 4px 6px -1px rgba(96, 165, 250, 0.3), 0 2px 4px -1px rgba(96, 165, 250, 0.2)',
                         transform: 'translateY(-1px)'
+                    },
+                    '&.launch-app-button': {
+                        fontWeight: 600,
+                        px: 2,
+                        height: '40px',
+                        minWidth: '140px',
+                        textTransform: 'none',
+                        background: 'linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%)',
+                        '&:hover': {
+                            background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+                        }
                     }
                 },
                 contained: {
@@ -205,89 +216,11 @@ const darkTheme = createTheme({
                         transform: 'translateY(-4px)',
                         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6)'
                     },
-                    '&.section-card': {
-                        background: 'rgba(255, 255, 255, 0.05)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
-                        borderRadius: '16px',
-                        transition: 'all 0.3s ease',
-                        height: '100%',
+                    '&.app-page-card': {
+                        transition: 'none',
                         '&:hover': {
-                            transform: 'translateY(-8px)',
-                            borderColor: 'rgba(59, 130, 246, 0.3)',
-                            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',
-                        },
-                        '&.feature-card': {
-                            borderRadius: '12px',
-                            position: 'relative',
-                            overflow: 'hidden',
-                            '&::before': {
-                                content: '""',
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
-                                right: 0,
-                                height: 3,
-                                background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
-                                transform: 'scaleX(0)',
-                                transition: 'transform 0.3s ease',
-                            },
-                            '&:hover::before': {
-                                transform: 'scaleX(1)',
-                            },
-                            '&:hover': {
-                                transform: 'translateY(-5px)',
-                                borderColor: 'rgba(59, 130, 246, 0.3)',
-                                boxShadow: '0 15px 35px rgba(0, 0, 0, 0.2)',
-                            }
-                        }
-                    },
-                    '&.project-card': {
-                        width: '100%',
-                        maxWidth: 370,
-                        minWidth: 260,
-                        margin: '0 auto',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        minHeight: 480,
-                        boxSizing: 'border-box',
-                        background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
-                        border: '1px solid #334155',
-                        borderRadius: '20px',
-                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4)',
-                        overflow: 'hidden',
-                        position: 'relative',
-                        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                        '&:hover': {
-                            transform: 'translateY(-12px) scale(1.02)',
-                            boxShadow: '0 30px 60px rgba(0, 0, 0, 0.6)',
-                        },
-                        '&::before': {
-                            content: '""',
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            right: 0,
-                            bottom: 0,
-                            background: 'linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%)',
-                            opacity: 0,
-                            transition: 'opacity 0.3s ease',
-                            zIndex: 1,
-                            pointerEvents: 'none'
-                        },
-                        '&:hover::before': {
-                            opacity: 1
-                        }
-                    },
-                    '&.tech-card': {
-                        borderRadius: '16px',
-                        border: '1px solid #334155',
-                        background: 'linear-gradient(135deg, #1e293b 0%, #334155 100%)',
-                        height: '100%',
-                        transition: 'all 0.3s ease',
-                        '&:hover': {
-                            borderColor: '#60a5fa',
-                            transform: 'translateY(-4px)',
-                            boxShadow: '0 20px 40px rgba(96, 165, 250, 0.2)'
+                            transform: 'none',
+                            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3)'
                         }
                     }
                 }
@@ -296,15 +229,6 @@ const darkTheme = createTheme({
         MuiTypography: {
             styleOverrides: {
                 root: {
-                    '&.section-title': {
-                        fontWeight: 600,
-                        marginBottom: '1rem',
-                        color: '#ffffff',
-                        background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
-                        '-webkit-background-clip': 'text',
-                        '-webkit-text-fill-color': 'transparent',
-                        'background-clip': 'text',
-                    }
                 }
             }
         }

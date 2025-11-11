@@ -11,7 +11,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
     const { user, loading } = useUser();
 
     if (loading) return <Loader />;
-    if (!user) return <Navigate to="/login" replace />;
+    if (!user) return <Navigate to="/" replace />;
 
     return element;
 };

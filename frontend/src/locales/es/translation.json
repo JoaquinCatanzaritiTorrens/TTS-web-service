@@ -1,105 +1,35 @@
 {
     "nav": {
         "home": "Inicio",
+        "app": "App",
         "contact": "Contacto"
     },
     "home": {
         "hero": {
-            "title": "Trabaja Inteligente, No Más Duro",
-            "subtitle": "Herramientas potentes impulsadas por IA que automatizan tus tareas diarias y aumentan la productividad. Desde edición de audio hasta procesamiento de documentos, lo tenemos cubierto.",
-            "cta": "Iniciar Prueba Gratuita",
-            "ctaSecondary": "Ver Precios"
-        },
-        "socialProof": {
-            "title": "Confianza de profesionales en todo el mundo",
-            "subtitle": "Únete a miles de empresas que ahorran horas cada día"
-        },
-        "useCases": {
-            "title": "Perfecto para Cada Profesional",
-            "subtitle": "Ya seas creador de contenido, empresario o freelancer",
-            "cases": [
-                {
-                    "title": "Creadores de Contenido",
-                    "description": "Genera locuciones, edita audio y crea visuales impactantes con herramientas impulsadas por IA.",
-                    "icon": "mic"
-                },
-                {
-                    "title": "Empresarios",
-                    "description": "Automatiza el procesamiento de documentos, resume informes y optimiza flujos de trabajo.",
-                    "icon": "business"
-                },
-                {
-                    "title": "Freelancers",
-                    "description": "Entrega resultados más rápidos con edición de PDF, texto a voz y herramientas de generación de imágenes.",
-                    "icon": "freelance"
-                }
-            ]
-        },
-        "benefits": {
-            "title": "Por Qué Elegir Nuestra Plataforma",
-            "subtitle": "Herramientas simples y potentes que simplemente funcionan",
-            "items": [
-                {
-                    "title": "Ahorra Tiempo",
-                    "description": "Automatiza tareas repetitivas y enfócate en lo que realmente importa",
-                    "icon": "time"
-                },
-                {
-                    "title": "Calidad Profesional",
-                    "description": "Resultados de nivel empresarial sin la complejidad empresarial",
-                    "icon": "quality"
-                },
-                {
-                    "title": "Fácil de Usar",
-                    "description": "Sin curva de aprendizaje. Comienza a ser productivo en minutos",
-                    "icon": "easy"
-                },
-                {
-                    "title": "Asequible",
-                    "description": "Herramientas profesionales a una fracción de los costos tradicionales",
-                    "icon": "price"
-                }
-            ]
-        },
-        "features": {
-            "title": "Todo Lo Que Necesitas",
-            "subtitle": "Suite completa de herramientas de productividad",
-            "items": [
-                {
-                    "title": "IA Texto a Voz",
-                    "description": "Convierte texto a audio natural en múltiples idiomas"
-                },
-                {
-                    "title": "Resumidor de Documentos",
-                    "description": "Extrae ideas clave de documentos largos al instante"
-                },
-                {
-                    "title": "Generación de Imágenes",
-                    "description": "Crea visuales profesionales con generación impulsada por IA"
-                },
-                {
-                    "title": "Editor de Audio",
-                    "description": "Herramientas profesionales de edición de audio en tu navegador"
-                },
-                {
-                    "title": "Herramientas PDF",
-                    "description": "Edita, fusiona y optimiza PDFs sin esfuerzo"
-                },
-                {
-                    "title": "Y Más",
-                    "description": "Nuevas herramientas agregadas regularmente basadas en comentarios de usuarios"
-                }
-            ]
-        },
-        "cta": {
-            "title": "¿Listo para Trabajar Más Inteligente?",
-            "subtitle": "Únete a miles de profesionales que ya ahorran tiempo con nuestras herramientas",
-            "button": "Iniciar Tu Prueba Gratuita"
+            "title": "Clona Tu Voz con IA",
+            "subtitle": "Genera audio natural con tu propia voz usando F5-TTS. Sube un audio de referencia, escribe el texto y obtén síntesis de voz realista en español.",
+            "cta": "Comenzar Ahora",
+            "features": {
+                "voiceCloning": "Clonación de Voz",
+                "spanish": "Modelo Español",
+                "naturalVoice": "Voz Natural"
+            }
+        }
+    },
+    "pricing": {
+        "title": "Precios Simples y Transparentes",
+        "subtitle": "Elige el plan que funciona para ti. Comienza gratis, mejora cuando estés listo.",
+        "popular": "Más Popular",
+        "free": {
+            "name": "Gratis",
+            "period": "/para siempre",
+            "description": "Perfecto para probar nuestro servicio y proyectos pequeños"
         }
     },
     "header": {
         "login": "Iniciar sesión",
-        "logout": "Cerrar sesión"
+        "logout": "Cerrar sesión",
+        "launchApp": "Abrir App"
     },
     "drawer": {
         "navigation": "Navegación",
@@ -190,5 +120,50 @@
         "errorSending": "Error al enviar el formulario de contacto.",
         "errorSubmission": "Error al enviar el formulario.",
         "successMessage": "Mensaje enviado exitosamente."
+    },
+    "app": {
+        "title": "Síntesis de Voz F5-TTS Español",
+        "referenceAudio": "Audio de Referencia",
+        "viewInstructions": "Ver instrucciones",
+        "referenceText": "Buenos días. Me llamo María y trabajo como profesora de español. Hoy vamos a aprender sobre la importancia de la comunicación efectiva en el mundo digital. Es fascinante cómo la tecnología ha transformado nuestra manera de interactuar, permitiéndonos conectar con personas de todo el mundo en tiempo real. Sin embargo, también es crucial mantener un equilibrio saludable entre la vida digital y la presencial.",
+        "recordInstructions": "📝 Por favor, graba un audio leyendo el siguiente texto:",
+        "supportedFormats": "💡 Formatos soportados: WAV, MP3, OGG, WebM (máx. 10MB)",
+        "uploadAudio": "Subir Audio",
+        "recordAudio": "Grabar Audio",
+        "stop": "Detener",
+        "recording": "Grabando...",
+        "recordedAudio": "Audio Grabado:",
+        "textToGenerate": "Texto a Generar",
+        "textPlaceholder": "Ingresa el texto que deseas sintetizar...",
+        "characters": "caracteres",
+        "synthesize": "Sintetizar Voz",
+        "generating": "Generando...",
+        "generatingMessage": "Esto puede tomar 20-30 segundos. Por favor espera...",
+        "synthesizedAudio": "Audio Sintetizado",
+        "download": "Descargar",
+        "queueDialog": {
+            "title": "Hay Cola de Procesamiento",
+            "message": "Actualmente hay otros usuarios generando audio. Tu solicitud se procesará cuando llegue su turno.",
+            "user": "usuario",
+            "users": "usuarios",
+            "estimatedTime": "⏱️ Tiempo estimado: ~25s por generación",
+            "description": "El sistema procesa las solicitudes de forma secuencial. Por favor espera tu turno.",
+            "cancel": "Cancelar",
+            "continue": "Continuar"
+        },
+        "sidebar": {
+            "settings": "Configuración",
+            "logout": "Cerrar Sesión",
+            "hide": "Ocultar barra lateral",
+            "show": "Mostrar barra lateral"
+        },
+        "errors": {
+            "microphoneAccess": "No se pudo acceder al micrófono. Por favor verifica los permisos.",
+            "invalidAudioFile": "Por favor selecciona un archivo de audio válido",
+            "fileTooLarge": "El archivo es demasiado grande. Máximo 10MB",
+            "noReferenceAudio": "Por favor sube un audio de referencia",
+            "noGenerationText": "Por favor ingresa el texto a generar",
+            "synthesisError": "Error al generar el audio"
+        }
     }
 }

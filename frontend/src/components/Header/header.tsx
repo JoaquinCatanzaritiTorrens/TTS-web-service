@@ -1,18 +1,20 @@
-import { AppBar, Toolbar, IconButton, Box, Container } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Box, Container, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import { useTranslation } from 'react-i18next';
 import useHeader from './use-header';
 import Logo from './header-components/Logo';
 import NavLinks from './header-components/NavLinks';
 import LanguageSelector from './header-components/LanguageSelector';
-import UserMenu from './header-components/UserMenu';
 import DrawerMenu from './header-components/DrawerMenu';
 import ThemeToggle from './header-components/ThemeToggle';
 import './header.css';
 
 const Header = () => {
+    const { t } = useTranslation();
     const {
-        state: { user, anchorEl, open, show, isMobile, mobileOpen, navItems },
-        actions: { handleMenuOpen, handleMenuClose, handleLogout, handleLogin, handleNavigate, handleLogoClick, handleDrawerToggle }
+        state: { show, isMobile, mobileOpen, navItems },
+        actions: { handleNavigate, handleLogoClick, handleDrawerToggle, handleLaunchApp }
     } = useHeader();
 
     return (
@@ -24,7 +26,7 @@ const Header = () => {
                 transition: 'transform 0.3s ease'
             }}
         >
-            <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
+            <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 2, md: 2 } }}>
                 <Toolbar className="header-toolbar" disableGutters>
                     <Logo onLogoClick={handleLogoClick} />
                     {isMobile ? (
@@ -37,28 +39,34 @@ const Header = () => {
                         <NavLinks navItems={navItems} onNavigate={handleNavigate} />
                     )}
                     {!isMobile && (
-                        <Box sx={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 1 }}>
+                        <Box sx={{
+                            marginLeft: 'auto',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 1,
+                            width: '240px',
+                            minWidth: '240px',
+                            justifyContent: 'flex-end',
+                            flexShrink: 0
+                        }}>
                             <ThemeToggle />
                             <LanguageSelector />
-                            <UserMenu
-                                user={user}
-                                anchorEl={anchorEl}
-                                open={open}
-                                handleMenuOpen={handleMenuOpen}
-                                handleMenuClose={handleMenuClose}
-                                handleLogin={handleLogin}
-                                handleLogout={handleLogout}
-                            />
+                            <Button
+                                variant="contained"
+                                startIcon={<RocketLaunchIcon />}
+                                onClick={handleLaunchApp}
+                                className="launch-app-button"
+                            >
+                                {t('header.launchApp')}
+                            </Button>
                         </Box>
                     )}
                     <DrawerMenu
                         open={mobileOpen}
                         onClose={handleDrawerToggle}
                         navItems={navItems}
-                        user={user}
                         handleNavigate={handleNavigate}
-                        handleLogin={handleLogin}
-                        handleLogout={handleLogout}
+                        handleLaunchApp={handleLaunchApp}
                     />
                 </Toolbar>
             </Container>

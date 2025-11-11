@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
+RUN mkdir -p uploads/temp
+
 EXPOSE 5000
 
 CMD ["npm", "run", "start:migrate"]

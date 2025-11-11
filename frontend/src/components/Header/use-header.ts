@@ -1,13 +1,11 @@
-import { useState, MouseEvent, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useUser } from '../../context/user-context/user-context';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { getRouteFromNavItem } from './header-utils';
 
 const useHeader = () => {
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-    const open = Boolean(anchorEl);
-    const { user, logout, refreshUser } = useUser();
+    const { user, refreshUser } = useUser();
     const navigate = useNavigate();
     const { pathname } = useLocation();
     const [show, setShow] = useState(true);
@@ -33,26 +31,12 @@ const useHeader = () => {
 
     const navItems = ["home", "contact"];
 
-    const handleMenuOpen = (event: MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleMenuClose = () => {
-        setAnchorEl(null);
-    };
-
-    const handleProfile = () => {
-        handleMenuClose();
-        navigate('/profile');
-    };
-
-    const handleLogout = () => {
-        handleMenuClose();
-        logout();
-    };
-
-    const handleLogin = () => {
-        navigate('/login');
+    const handleLaunchApp = () => {
+        if (user) {
+            navigate('/app');
+        } else {
+            navigate('/login');
+        }
     };
 
     const handleNavigate = (navItem: string) => {
@@ -70,23 +54,16 @@ const useHeader = () => {
 
     return {
         state: {
-            user,
-            anchorEl,
-            open,
             show,
             isMobile,
             mobileOpen,
             navItems,
         },
         actions: {
-            handleMenuOpen,
-            handleMenuClose,
-            handleProfile,
-            handleLogout,
-            handleLogin,
             handleNavigate,
             handleLogoClick,
             handleDrawerToggle,
+            handleLaunchApp,
         }
     };
 };

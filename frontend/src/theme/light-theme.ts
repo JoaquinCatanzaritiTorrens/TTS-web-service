@@ -4,19 +4,19 @@ const lightTheme = createTheme({
     palette: {
         mode: 'light',
         primary: {
-            main: '#2563eb',
-            light: '#3b82f6',
-            dark: '#1d4ed8',
-            contrastText: '#ffffff'
-        },
-        secondary: {
             main: '#7c3aed',
             light: '#8b5cf6',
             dark: '#6d28d9',
             contrastText: '#ffffff'
         },
+        secondary: {
+            main: '#0891b2',
+            light: '#06b6d4',
+            dark: '#0e7490',
+            contrastText: '#ffffff'
+        },
         background: {
-            default: '#f8fafc',
+            default: '#faf5ff',
             paper: '#ffffff'
         },
         text: {
@@ -131,6 +131,17 @@ const lightTheme = createTheme({
                     '&:hover': {
                         boxShadow: '0 4px 6px -1px rgba(37, 99, 235, 0.3), 0 2px 4px -1px rgba(37, 99, 235, 0.2)',
                         transform: 'translateY(-1px)'
+                    },
+                    '&.launch-app-button': {
+                        fontWeight: 600,
+                        px: 2,
+                        height: '40px',
+                        minWidth: '140px',
+                        textTransform: 'none',
+                        background: 'linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%)',
+                        '&:hover': {
+                            background: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+                        }
                     }
                 },
                 contained: {
@@ -204,106 +215,12 @@ const lightTheme = createTheme({
                         transform: 'translateY(-4px)',
                         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
                     },
-                    '&.section-card': {
-                        background: 'rgba(255, 255, 255, 0.8)',
-                        border: '1px solid rgba(37, 99, 235, 0.1)',
-                        borderRadius: '16px',
-                        transition: 'all 0.3s ease',
-                        height: '100%',
-                        '&:hover': {
-                            transform: 'translateY(-8px)',
-                            borderColor: 'rgba(37, 99, 235, 0.3)',
-                            boxShadow: '0 20px 40px rgba(37, 99, 235, 0.1)',
-                        },
-                        '&.feature-card': {
-                            borderRadius: '12px',
-                            position: 'relative',
-                            overflow: 'hidden',
-                            '&::before': {
-                                content: '""',
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
-                                right: 0,
-                                height: 3,
-                                background: 'linear-gradient(135deg, #2563eb, #7c3aed)',
-                                transform: 'scaleX(0)',
-                                transition: 'transform 0.3s ease',
-                            },
-                            '&:hover::before': {
-                                transform: 'scaleX(1)',
-                            },
-                            '&:hover': {
-                                transform: 'translateY(-5px)',
-                                borderColor: 'rgba(37, 99, 235, 0.3)',
-                                boxShadow: '0 15px 35px rgba(37, 99, 235, 0.1)',
-                            }
-                        }
-                    },
-                    '&.project-card': {
-                        width: '100%',
-                        maxWidth: 370,
-                        minWidth: 260,
-                        margin: '0 auto',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        minHeight: 480,
-                        boxSizing: 'border-box',
-                        background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                        border: '1px solid #e2e8f0',
-                        borderRadius: '20px',
-                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
-                        overflow: 'hidden',
-                        position: 'relative',
-                        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                        '&:hover': {
-                            transform: 'translateY(-12px) scale(1.02)',
-                            boxShadow: '0 30px 60px rgba(0, 0, 0, 0.15)',
-                        },
-                        '&::before': {
-                            content: '""',
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            right: 0,
-                            bottom: 0,
-                            background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%)',
-                            opacity: 0,
-                            transition: 'opacity 0.3s ease',
-                            zIndex: 1,
-                            pointerEvents: 'none'
-                        },
-                        '&:hover::before': {
-                            opacity: 1
-                        }
-                    },
-                    '&.tech-card': {
-                        borderRadius: '16px',
-                        border: '1px solid #e2e8f0',
-                        background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                        height: '100%',
-                        transition: 'all 0.3s ease',
-                        '&:hover': {
-                            borderColor: '#2563eb',
-                            transform: 'translateY(-4px)',
-                            boxShadow: '0 20px 40px rgba(37, 99, 235, 0.1)'
-                        }
-                    }
                 }
             }
         },
         MuiTypography: {
             styleOverrides: {
                 root: {
-                    '&.section-title': {
-                        fontWeight: 600,
-                        marginBottom: '1rem',
-                        color: 'inherit',
-                        background: 'linear-gradient(135deg, #2563eb, #7c3aed)',
-                        '-webkit-background-clip': 'text',
-                        '-webkit-text-fill-color': 'transparent',
-                        'background-clip': 'text',
-                    }
                 }
             }
         }

@@ -1,14 +1,14 @@
-import { Drawer, List, ListItem, ListItemButton, ListItemText, Divider, Box, Typography, Avatar, IconButton } from '@mui/material';
-import PersonIcon from '@mui/icons-material/Person';
+import { Drawer, List, ListItem, ListItemButton, ListItemText, Box, Typography, Button } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/Settings';
 import NavigationIcon from '@mui/icons-material/Navigation';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import LanguageSelector from './LanguageSelector';
 import ThemeToggle from './ThemeToggle';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import { isNavItemActive } from '../header-utils';
 
-const DrawerMenu = ({ open, onClose, navItems, user, handleNavigate, handleLogin, handleLogout }) => {
+const DrawerMenu = ({ open, onClose, navItems, handleNavigate, handleLaunchApp }) => {
     const { t } = useTranslation();
     const { pathname } = useLocation();
 
@@ -90,71 +90,15 @@ const DrawerMenu = ({ open, onClose, navItems, user, handleNavigate, handleLogin
                     </Box>
                 </Box>
                 <Box sx={{ p: 2, mt: 'auto' }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
-                        <PersonIcon color="primary" fontSize="small" />
-                        <Typography variant="subtitle2" color="primary" fontWeight={600}>
-                            {t('drawer.account')}
-                        </Typography>
-                    </Box>
-
-                    {user ? (
-                        <Box sx={{ mb: 2 }}>
-                            <Box sx={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: 2,
-                                p: 1.5,
-                                bgcolor: 'action.hover',
-                                borderRadius: 1,
-                                mb: 1
-                            }}>
-                                <Avatar sx={{ width: 32, height: 32, bgcolor: 'primary.main' }}>
-                                    {user.email?.charAt(0).toUpperCase()}
-                                </Avatar>
-                                <Box sx={{ flex: 1, minWidth: 0 }}>
-                                    <Typography variant="body2" fontWeight={600} noWrap>
-                                        {user.name || 'Usuario'}
-                                    </Typography>
-                                    <Typography variant="caption" color="text.secondary" noWrap>
-                                        {user.email}
-                                    </Typography>
-                                </Box>
-                            </Box>
-                        </Box>
-                    ) : (
-                        <Box sx={{ mb: 2 }}>
-                            <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
-                                {t('drawer.notLoggedIn')}
-                            </Typography>
-                        </Box>
-                    )}
-
-                    <ListItem disablePadding>
-                        <ListItemButton
-                            onClick={() => handleItemClick(user ? handleLogout : handleLogin)}
-                            sx={{
-                                borderRadius: 1,
-                                bgcolor: user ? 'error.main' : 'primary.main',
-                                color: user ? 'error.contrastText' : 'primary.contrastText',
-                                '&:hover': {
-                                    bgcolor: user ? 'error.dark' : 'primary.dark',
-                                },
-                                transition: 'all 0.2s ease-in-out',
-                                justifyContent: 'center'
-                            }}
-                        >
-                            <ListItemText
-                                primary={user ? t('header.logout') : t('header.login')}
-                                sx={{
-                                    textAlign: 'center',
-                                    '& .MuiListItemText-primary': {
-                                        fontWeight: 600,
-                                        fontSize: '0.95rem'
-                                    }
-                                }}
-                            />
-                        </ListItemButton>
-                    </ListItem>
+                    <Button
+                        variant="contained"
+                        fullWidth
+                        startIcon={<RocketLaunchIcon />}
+                        onClick={() => handleItemClick(handleLaunchApp)}
+                        className="launch-app-button"
+                    >
+                        {t('header.launchApp')}
+                    </Button>
                 </Box>
             </Box>
         </Drawer>

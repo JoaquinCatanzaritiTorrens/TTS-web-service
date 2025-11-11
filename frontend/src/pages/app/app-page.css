@@ -1,0 +1,17 @@
+.app-page {
+  min-height: 100vh;
+  padding-top: 1rem;
+  background: linear-gradient(180deg, 
+    rgba(167, 139, 250, 0.05) 0%, 
+    rgba(6, 182, 212, 0.05) 100%
+  );
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

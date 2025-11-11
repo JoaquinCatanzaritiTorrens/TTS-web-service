@@ -16,6 +16,9 @@ const ThemeToggle: React.FC = () => {
                 color="inherit"
                 onClick={toggleTheme}
                 sx={{
+                    width: '40px',
+                    height: '40px',
+                    padding: '8px',
                     transition: 'all 0.3s ease',
                     '&:hover': {
                         transform: 'scale(1.1)',

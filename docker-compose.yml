@@ -3,22 +3,22 @@ services:
     build:
       context: ./frontend
     ports:
-      - "6001:6000"
+      - "6005:6000"
     restart: unless-stopped
-    container_name: base-frontend
+    container_name: tts-frontend
     environment:
       SERVER_NAME: ${SERVER_NAME}
       BACKEND_PORT: ${BACKEND_PORT}
     networks:
-      - base-network
+      - tts-network
 
   backend:
     build:
       context: ./backend
     ports:
-      - "5001:5000"
+      - "5005:5000"
     restart: unless-stopped
-    container_name: base-backend
+    container_name: tts-backend
     environment:
       NODE_ENV: ${NODE_ENV}
       JWT_SECRET: ${JWT_SECRET}
@@ -33,18 +33,36 @@ services:
       EMAIL_SENDER_PORT: ${EMAIL_SENDER_PORT}
       EMAIL_SENDER_HOST: ${EMAIL_SENDER_HOST}
       REDIS_URL: ${REDIS_URL}
+      TTS_SERVICE_URL: ${TTS_SERVICE_URL}
     depends_on:
       - redis
+      - tts
     networks:
-      - base-network
+      - tts-network
+
+  tts:
+    image: danisojo/spanish-f5:v1
+    container_name: f5-tts-spanish
+    ports:
+      - "7005:7860"
+    command: f5-tts_infer-gradio --port 7860 --host 0.0.0.0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    networks:
+      - tts-network
 
   redis:
     image: redis:latest
     restart: unless-stopped
-    container_name: base-redis
+    container_name: tts-redis
     networks:
-      - base-network
+      - tts-network
 
 networks:
-  base-network:
+  tts-network:
     driver: bridge

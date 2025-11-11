@@ -15,15 +15,20 @@ const LanguageSelector = () => {
             onChange={(event) => i18n.changeLanguage(event.target.value)}
             variant='standard'
             disableUnderline={true}
-            fullWidth={false}
+            IconComponent={() => null}
             renderValue={() => <TranslateIcon />}
             sx={{
+                width: '40px',
+                minWidth: '40px',
+                height: '40px',
                 '& .MuiSelect-select': {
                     display: 'flex',
                     alignItems: 'center',
-                    paddingTop: 0,
-                    paddingBottom: 0,
-                    minHeight: 'auto'
+                    justifyContent: 'center',
+                    padding: '8px !important',
+                    minHeight: 'auto',
+                    width: '40px',
+                    height: '40px'
                 }
             }}
         >

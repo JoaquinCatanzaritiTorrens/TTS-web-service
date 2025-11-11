@@ -11,8 +11,9 @@ export const checkJwt = (req: Request, res: Response, next: NextFunction) => {
   }
 
   try {
-    const decoded = jwt.verify(token, jwtSecret);
+    const decoded = jwt.verify(token, jwtSecret) as any;
     (req as any).user = decoded;
+    (req as any).userId = decoded.id;
     next();
   } catch (error) {
     return res.status(401).json({ message: 'Invalid token' });

@@ -87,7 +87,7 @@ const useRegister = () => {
             } else {
                 await refreshUser();
             }
-            navigate('/');
+            navigate('/app');
         } catch (err: any) {
             setError(err.message);
         } finally {

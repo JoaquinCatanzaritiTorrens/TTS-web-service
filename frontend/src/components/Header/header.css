@@ -1,6 +1,7 @@
 .header-appbar {
     transition: transform 0.3s ease;
     z-index: 1300;
+    width: 100%;
 }
 
 .header-hide {
@@ -10,10 +11,12 @@
 .header-toolbar {
     position: relative;
     width: 100%;
+    min-height: 64px !important;
 }
 
 .header-logo-box {
     flex: 0 0 auto;
+    width: 150px;
 }
 
 .header-logo-img {
@@ -28,6 +31,8 @@
     transform: translate(-50%, -50%);
     display: flex;
     gap: 16px;
+    min-width: 300px;
+    justify-content: center;
 }
 
 .header-nav-button {
@@ -42,6 +47,7 @@
     min-width: auto;
     outline: none !important;
     transition: none;
+    width: 120px;
 }
 
 .header-nav-button::after {
@@ -53,6 +59,7 @@
     height: 2px;
     background-color: currentColor;
     transition: all 0.3s ease-out;
+    transform: translateX(-50%);
 }
 
 .header-nav-button:hover,
@@ -66,32 +73,17 @@
 
 .header-nav-button:hover::after,
 .header-nav-button.active::after {
-    left: 0;
-    width: 100%;
+    left: 50%;
+    width: 80%;
 }
 
 .header-right-box {
     margin-left: auto;
     flex: 0 0 auto;
-}
-
-.header-user-button {
-    text-transform: none;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
-    color: #ffffff !important;
-    border-radius: 8px !important;
-    padding: 8px 16px !important;
-    font-weight: 600 !important;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
-    transition: all 0.3s ease !important;
-}
-
-.header-user-button:hover {
-    background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4) !important;
-}
-
-.header-menu-paper {
-    margin-top: 8px !important;
+    min-width: 240px;
+    width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
 }

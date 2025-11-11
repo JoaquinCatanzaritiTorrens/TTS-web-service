@@ -1,105 +1,35 @@
 {
     "nav": {
         "home": "Home",
+        "app": "App",
         "contact": "Contact"
     },
     "home": {
         "hero": {
-            "title": "Work Smart, Not Harder",
-            "subtitle": "Powerful AI-driven tools that automate your daily tasks and boost productivity. From audio editing to document processing, we've got you covered.",
-            "cta": "Start Free Trial",
-            "ctaSecondary": "View Pricing"
-        },
-        "socialProof": {
-            "title": "Trusted by professionals worldwide",
-            "subtitle": "Join thousands of businesses saving hours every day"
-        },
-        "useCases": {
-            "title": "Perfect for Every Professional",
-            "subtitle": "Whether you're a content creator, business owner, or freelancer",
-            "cases": [
-                {
-                    "title": "Content Creators",
-                    "description": "Generate voiceovers, edit audio, and create stunning visuals with AI-powered tools.",
-                    "icon": "mic"
-                },
-                {
-                    "title": "Business Owners",
-                    "description": "Automate document processing, summarize reports, and streamline workflows.",
-                    "icon": "business"
-                },
-                {
-                    "title": "Freelancers",
-                    "description": "Deliver faster results with PDF editing, text-to-speech, and image generation tools.",
-                    "icon": "freelance"
-                }
-            ]
-        },
-        "benefits": {
-            "title": "Why Choose Our Platform",
-            "subtitle": "Simple, powerful tools that just work",
-            "items": [
-                {
-                    "title": "Save Time",
-                    "description": "Automate repetitive tasks and focus on what matters most",
-                    "icon": "time"
-                },
-                {
-                    "title": "Professional Quality",
-                    "description": "Enterprise-grade results without the enterprise complexity",
-                    "icon": "quality"
-                },
-                {
-                    "title": "Easy to Use",
-                    "description": "No learning curve. Start being productive in minutes",
-                    "icon": "easy"
-                },
-                {
-                    "title": "Affordable",
-                    "description": "Professional tools at a fraction of traditional costs",
-                    "icon": "price"
-                }
-            ]
-        },
-        "features": {
-            "title": "Everything You Need",
-            "subtitle": "Comprehensive suite of productivity tools",
-            "items": [
-                {
-                    "title": "AI Text-to-Speech",
-                    "description": "Convert text to natural-sounding audio in multiple languages"
-                },
-                {
-                    "title": "Document Summarizer",
-                    "description": "Extract key insights from long documents instantly"
-                },
-                {
-                    "title": "Image Generation",
-                    "description": "Create professional visuals with AI-powered generation"
-                },
-                {
-                    "title": "Audio Editor",
-                    "description": "Professional audio editing tools in your browser"
-                },
-                {
-                    "title": "PDF Tools",
-                    "description": "Edit, merge, and optimize PDFs effortlessly"
-                },
-                {
-                    "title": "And More",
-                    "description": "New tools added regularly based on user feedback"
-                }
-            ]
-        },
-        "cta": {
-            "title": "Ready to Work Smarter?",
-            "subtitle": "Join thousands of professionals already saving time with our tools",
-            "button": "Start Your Free Trial"
+            "title": "Clone Your Voice with AI",
+            "subtitle": "Generate natural audio with your own voice using F5-TTS. Upload a reference audio, write text and get realistic voice synthesis in Spanish.",
+            "cta": "Start Now",
+            "features": {
+                "voiceCloning": "Voice Cloning",
+                "spanish": "Spanish Model",
+                "naturalVoice": "Natural Voice"
+            }
+        }
+    },
+    "pricing": {
+        "title": "Simple, Transparent Pricing",
+        "subtitle": "Choose the plan that works for you. Start free, upgrade when you're ready.",
+        "popular": "Most Popular",
+        "free": {
+            "name": "Free",
+            "period": "/forever",
+            "description": "Perfect for trying out our service and small projects"
         }
     },
     "header": {
         "login": "Login",
-        "logout": "Logout"
+        "logout": "Logout",
+        "launchApp": "Launch App"
     },
     "drawer": {
         "navigation": "Navigation",
@@ -190,5 +120,50 @@
         "errorSending": "Error sending contact form.",
         "errorSubmission": "Error submitting form.",
         "successMessage": "Message sent successfully."
+    },
+    "app": {
+        "title": "F5-TTS Spanish Voice Synthesis",
+        "referenceAudio": "Reference Audio",
+        "viewInstructions": "View instructions",
+        "referenceText": "Good morning. My name is María and I work as a Spanish teacher. Today we are going to learn about the importance of effective communication in the digital world. It is fascinating how technology has transformed the way we interact, allowing us to connect with people from all over the world in real time. However, it is also crucial to maintain a healthy balance between digital and face-to-face life.",
+        "recordInstructions": "📝 Please record an audio reading the following text:",
+        "supportedFormats": "💡 Supported formats: WAV, MP3, OGG, WebM (max. 10MB)",
+        "uploadAudio": "Upload Audio",
+        "recordAudio": "Record Audio",
+        "stop": "Stop",
+        "recording": "Recording...",
+        "recordedAudio": "Recorded Audio:",
+        "textToGenerate": "Text to Generate",
+        "textPlaceholder": "Enter the text you want to synthesize...",
+        "characters": "characters",
+        "synthesize": "Synthesize Voice",
+        "generating": "Generating...",
+        "generatingMessage": "This may take 20-30 seconds. Please wait...",
+        "synthesizedAudio": "Synthesized Audio",
+        "download": "Download",
+        "queueDialog": {
+            "title": "Processing Queue",
+            "message": "There are currently other users generating audio. Your request will be processed when it's your turn.",
+            "user": "user",
+            "users": "users",
+            "estimatedTime": "⏱️ Estimated time: ~25s per generation",
+            "description": "The system processes requests sequentially. Please wait for your turn.",
+            "cancel": "Cancel",
+            "continue": "Continue"
+        },
+        "sidebar": {
+            "settings": "Settings",
+            "logout": "Logout",
+            "hide": "Hide sidebar",
+            "show": "Show sidebar"
+        },
+        "errors": {
+            "microphoneAccess": "Could not access the microphone. Please check permissions.",
+            "invalidAudioFile": "Please select a valid audio file",
+            "fileTooLarge": "File is too large. Maximum 10MB",
+            "noReferenceAudio": "Please upload a reference audio",
+            "noGenerationText": "Please enter text to generate",
+            "synthesisError": "Error generating audio"
+        }
     }
 }
