@@ -144,7 +144,7 @@ const lightTheme = createTheme({
                         }
                     }
                 },
-                contained: {
+                containedPrimary: {
                     background: 'linear-gradient(135deg, #2563eb 0%, #3b82f6 100%)',
                     '&:hover': {
                         background: 'linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%)'

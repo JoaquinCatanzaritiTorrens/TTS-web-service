@@ -14,8 +14,7 @@ export const useAppPage = () => {
   const [recordedAudioUrl, setRecordedAudioUrl] = useState<string | null>(null);
   const [recordingTime, setRecordingTime] = useState(0);
   const [showInfoDialog, setShowInfoDialog] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  
+
   const audioRef = useRef<HTMLAudioElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
@@ -90,10 +89,10 @@ export const useAppPage = () => {
   const startRecording = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      
+
       let mimeType = 'audio/webm';
       const options: MediaRecorderOptions = {};
-      
+
       if (MediaRecorder.isTypeSupported('audio/wav')) {
         mimeType = 'audio/wav';
         options.mimeType = 'audio/wav';
@@ -114,16 +113,16 @@ export const useAppPage = () => {
 
       mediaRecorder.onstop = async () => {
         const audioBlob = new Blob(chunksRef.current, { type: mimeType });
-        
+
         try {
           const arrayBuffer = await audioBlob.arrayBuffer();
           const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
           const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-          
+
           const wavBlob = await audioBufferToWav(audioBuffer);
           const file = new File([wavBlob], 'recorded-audio.wav', { type: 'audio/wav' });
           setRefAudioFile(file);
-          
+
           const url = URL.createObjectURL(wavBlob);
           setRecordedAudioUrl(url);
         } catch (error) {
@@ -133,14 +132,14 @@ export const useAppPage = () => {
           const url = URL.createObjectURL(audioBlob);
           setRecordedAudioUrl(url);
         }
-        
+
         stream.getTracks().forEach(track => track.stop());
       };
 
       mediaRecorder.start();
       setIsRecording(true);
       setRecordingTime(0);
-      
+
       timerRef.current = setInterval(() => {
         setRecordingTime(prev => prev + 1);
       }, 1000);
@@ -215,10 +214,15 @@ export const useAppPage = () => {
       return;
     }
 
+    if (genText.length > 500) {
+      setError(t('app.errors.generationTooLong'));
+      return;
+    }
+
     try {
       const queueResponse = await fetch('/api/tts/queue-status');
       const queueData = await queueResponse.json();
-      
+
       if (queueData.queueLength > 0 || queueData.isProcessing) {
         setQueuePosition(queueData.queueLength);
         setShowQueueDialog(true);
@@ -282,10 +286,6 @@ export const useAppPage = () => {
     setError('');
   }, []);
 
-  const handleSidebarToggle = useCallback((isOpen: boolean) => {
-    setSidebarOpen(isOpen);
-  }, []);
-
   const handleCloseInfoDialog = useCallback(() => {
     setShowInfoDialog(false);
   }, []);
@@ -311,7 +311,6 @@ export const useAppPage = () => {
       recordedAudioRef,
       REFERENCE_TEXT,
       showInfoDialog,
-      sidebarOpen,
     },
     actions: {
       setGenText,
@@ -327,7 +326,6 @@ export const useAppPage = () => {
       setShowQueueDialog,
       clearError,
       setShowInfoDialog,
-      handleSidebarToggle,
       handleCloseInfoDialog,
       handleCloseQueueDialog,
     },

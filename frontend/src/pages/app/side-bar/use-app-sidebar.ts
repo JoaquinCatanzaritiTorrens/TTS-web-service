@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useUser } from '../../context/user-context/user-context';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useUser } from '../../../context/user-context/user-context';
 
 export interface UseAppSidebarProps {
     onToggle?: (isOpen: boolean) => void;
@@ -8,11 +8,18 @@ export interface UseAppSidebarProps {
 
 export const useAppSidebar = ({ onToggle }: UseAppSidebarProps = {}) => {
     const navigate = useNavigate();
+    const location = useLocation();
     const { setUser } = useUser();
     const [isOpen, setIsOpen] = useState(true);
 
+    const currentPath = location.pathname;
+
     const handleLogoClick = () => {
         navigate('/');
+    };
+
+    const navigateTo = (path: string) => {
+        navigate(path);
     };
 
     const handleLogout = async () => {
@@ -43,5 +50,7 @@ export const useAppSidebar = ({ onToggle }: UseAppSidebarProps = {}) => {
         handleLogoClick,
         handleLogout,
         toggleSidebar,
+        navigateTo,
+        currentPath,
     };
 };

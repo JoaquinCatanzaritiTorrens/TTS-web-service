@@ -1,5 +1,4 @@
 import FormData from 'form-data';
-import * as fs from 'fs';
 import * as path from 'path';
 import axios from 'axios';
 
@@ -9,14 +8,15 @@ export class TTSService {
   constructor() { }
 
   async synthesizeSpeech(
-    refAudioPath: string,
+    refAudioBuffer: Buffer,
+    refAudioName: string,
     refText: string,
     genText: string
   ): Promise<Buffer> {
     try {
       const formData = new FormData();
 
-      const ext = path.extname(refAudioPath).toLowerCase();
+      const ext = path.extname(refAudioName).toLowerCase();
       let contentType = 'audio/wav';
       let filename = 'reference-audio.wav';
 
@@ -31,11 +31,9 @@ export class TTSService {
         filename = 'reference-audio.ogg';
       }
 
-      const fileBuffer = fs.readFileSync(refAudioPath);
-
-      formData.append('files', fileBuffer, {
-        filename: filename,
-        contentType: contentType,
+      formData.append('files', refAudioBuffer, {
+        filename,
+        contentType,
       });
 
       const uploadResponse = await axios.post(`${this.TTS_SERVICE_URL}/upload`, formData, {

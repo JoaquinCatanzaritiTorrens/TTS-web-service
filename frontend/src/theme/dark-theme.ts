@@ -144,7 +144,7 @@ const darkTheme = createTheme({
                         }
                     }
                 },
-                contained: {
+                containedPrimary: {
                     background: 'linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)',
                     color: '#ffffff',
                     '&:hover': {

@@ -1,25 +1,25 @@
 import { Request, Response } from 'express';
 import { TTSService } from '../application/tts-service';
+import { ApiKeyService } from '../../apikeys/application/apikey-service';
 import multer from 'multer';
-import * as fs from 'fs';
-import * as path from 'path';
+
+const apiKeyService = new ApiKeyService();
 
 const upload = multer({
-  storage: multer.diskStorage({
-    destination: './uploads/temp/',
-    filename: (req, file, cb) => {
-      const ext = path.extname(file.originalname) || '.wav';
-      const uniqueName = Date.now() + '-' + Math.round(Math.random() * 1E9) + ext;
-      cb(null, uniqueName);
-    }
-  }),
+  storage: multer.memoryStorage(),
   limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit
   fileFilter: (req, file, cb) => {
-    const allowedMimes = ['audio/wav', 'audio/mpeg', 'audio/mp3', 'audio/x-wav', 'audio/webm', 'audio/ogg'];
-    if (allowedMimes.includes(file.mimetype)) {
+    const allowedMimes = [
+      'audio/wav', 'audio/wave', 'audio/x-wav', 'audio/vnd.wave',
+      'audio/mpeg', 'audio/mp3', 'audio/x-mpeg',
+      'audio/mp4', 'audio/aac', 'audio/ogg',
+      'audio/webm', 'audio/flac', 'audio/x-flac',
+      'application/octet-stream',
+    ];
+    if (allowedMimes.includes(file.mimetype) || file.mimetype.startsWith('audio/')) {
       cb(null, true);
     } else {
-      cb(new Error('Invalid file type. Only audio files are allowed.'));
+      cb(new Error(`Invalid file type: ${file.mimetype}. Only audio files are allowed.`));
     }
   }
 });
@@ -37,8 +37,8 @@ export class TTSController {
       });
     } catch (error: any) {
       console.error('Error getting queue status:', error);
-      res.status(500).json({ 
-        message: error.message || 'Failed to get queue status' 
+      res.status(500).json({
+        message: error.message || 'Failed to get queue status'
       });
     }
   };
@@ -46,11 +46,8 @@ export class TTSController {
   synthesizeSpeech = [
     upload.single('refAudio'),
     async (req: Request, res: Response) => {
-      let tempFilePath: string | undefined;
-
       try {
         TTSController.processingQueue++;
-        const myPosition = TTSController.processingQueue;
 
         if (!req.file) {
           TTSController.processingQueue--;
@@ -61,45 +58,43 @@ export class TTSController {
 
         if (!genText) {
           TTSController.processingQueue--;
-          return res.status(400).json({ 
-            message: 'genText is required' 
-          });
+          return res.status(400).json({ message: 'genText is required' });
         }
 
-        tempFilePath = req.file.path;
+        if (genText.length > 500) {
+          TTSController.processingQueue--;
+          return res.status(400).json({ message: 'genText exceeds maximum length of 500 characters' });
+        }
 
         while (TTSController.isProcessing) {
           await new Promise(resolve => setTimeout(resolve, 500));
         }
-
         TTSController.isProcessing = true;
 
         const audioBuffer = await this.ttsService.synthesizeSpeech(
-          tempFilePath,
+          req.file.buffer,
+          req.file.originalname,
           refText,
           genText
         );
+
+        const apiKeyId: number | null = (req as any).apiKeyId ?? null;
+        const userId: number | null = (req as any).userId ?? null;
+        await apiKeyService.recordRequest(apiKeyId, userId);
 
         res.set({
           'Content-Type': 'audio/wav',
           'Content-Length': audioBuffer.length,
           'Content-Disposition': 'inline; filename="synthesized.wav"'
         });
-
         res.send(audioBuffer);
 
       } catch (error: any) {
         console.error('Error synthesizing speech:', error);
-        res.status(500).json({ 
-          message: error.message || 'Failed to synthesize speech' 
-        });
+        res.status(500).json({ message: error.message || 'Failed to synthesize speech' });
       } finally {
         TTSController.isProcessing = false;
         TTSController.processingQueue--;
-        
-        if (tempFilePath && fs.existsSync(tempFilePath)) {
-          fs.unlinkSync(tempFilePath);
-        }
       }
     }
   ];

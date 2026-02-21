@@ -16,7 +16,9 @@ const TermsOfService = LoadComponent(lazy(() => import('./pages/_legal/terms-of-
 const PrivacyPolicy = LoadComponent(lazy(() => import('./pages/_legal/privacy-policy')));
 const CookiesPolicy = LoadComponent(lazy(() => import('./pages/_legal/cookies-policy')));
 const Contact = LoadComponent(lazy(() => import('./pages/contact-page/contact-page')));
+const AppLayout = LoadComponent(lazy(() => import('./pages/app/layout/app-layout')));
 const AppPage = LoadComponent(lazy(() => import('./pages/app/app-page')));
+const KeysPage = LoadComponent(lazy(() => import('./pages/app/keys/keys-page')));
 
 const routes: RouteObject[] = [
     { path: '/login', element: <Login /> },
@@ -25,9 +27,13 @@ const routes: RouteObject[] = [
     { path: '/terms-of-service', element: <TermsOfService /> },
     { path: '/cookies-policy', element: <CookiesPolicy /> },
     { path: '/contact', element: <Contact /> },
-    { 
-        path: '/app', 
-        element: <PrivateRoute element={<AppPage />} />
+    {
+        path: '/app',
+        element: <PrivateRoute element={<AppLayout />} />,
+        children: [
+            { index: true, element: <AppPage /> },
+            { path: 'keys', element: <KeysPage /> },
+        ],
     },
     { path: '/', element: <Home /> },
 ];
