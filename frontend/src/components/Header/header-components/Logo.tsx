@@ -1,15 +1,11 @@
 import Box from '@mui/material/Box';
-import { useCustomTheme } from '../../../context/theme-context/theme-context';
-import logoWhite from '../../../assets/logo.webp';
-import logoBlack from '../../../assets/logo-black.webp';
+import logo from '../../../assets/logo.webp';
 
 const Logo = ({ onLogoClick }) => {
-    const { isDarkMode } = useCustomTheme();
-
     return (
         <Box className="header-logo-box">
             <img
-                src={isDarkMode ? logoWhite : logoBlack}
+                src={logo}
                 alt="Logo"
                 className="header-logo-img"
                 onClick={onLogoClick}
