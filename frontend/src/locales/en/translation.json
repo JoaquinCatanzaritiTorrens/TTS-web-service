@@ -16,16 +16,6 @@
             }
         }
     },
-    "pricing": {
-        "title": "Simple, Transparent Pricing",
-        "subtitle": "Choose the plan that works for you. Start free, upgrade when you're ready.",
-        "popular": "Most Popular",
-        "free": {
-            "name": "Free",
-            "period": "/forever",
-            "description": "Perfect for trying out our service and small projects"
-        }
-    },
     "header": {
         "login": "Login",
         "logout": "Logout",
@@ -34,7 +24,6 @@
     "drawer": {
         "navigation": "Navigation",
         "preferences": "Preferences",
-        "account": "Account",
         "notLoggedIn": "You are not logged in"
     },
     "theme": {
@@ -105,10 +94,6 @@
             "p5": "These terms may be updated occasionally. Continued use implies acceptance of the changes."
         }
     },
-    "hero": {
-        "title": "Joaquin Catanzariti Torrens",
-        "subtitle": "Full Stack Developer committed to continuous learning, with a genuine interest in emerging technologies and development best practices. Alongside my professional work, I lead personal projects focused on solving real-world problems through web-based solutions."
-    },
     "contact": {
         "getInTouch": "Get in Touch",
         "name": "Name",
@@ -162,7 +147,7 @@
         "errors": {
             "microphoneAccess": "Could not access the microphone. Please check permissions.",
             "invalidAudioFile": "Please select a valid audio file",
-            "fileTooLarge": "File is too large. Maximum 10MB",
+            "fileTooLarge": "File is too large. Maximum 15MB",
             "noReferenceAudio": "Please upload a reference audio",
             "noGenerationText": "Please enter text to generate",
             "generationTooLong": "Text must be 500 characters or fewer",

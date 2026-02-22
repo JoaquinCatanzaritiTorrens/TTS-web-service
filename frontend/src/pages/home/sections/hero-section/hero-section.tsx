@@ -95,12 +95,17 @@ const HeroSection = () => {
                         </Stack>
                     </Box>
 
-                    <Box className="hero-visual">
+                    <Box className="hero-visual" sx={{
+                            height: { xs: '250px', md: 'auto' },
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}>
                         <Box
                             sx={{
                                 position: 'relative',
                                 width: '100%',
-                                height: { xs: '300px', md: '400px' },
+                                height: { xs: '200px', md: '400px' },
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',

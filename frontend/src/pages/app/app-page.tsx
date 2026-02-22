@@ -26,7 +26,8 @@ import {
   Mic,
   Stop,
   FiberManualRecord,
-  Info
+  Info,
+  GraphicEq
 } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import { useOutletContext } from 'react-router-dom';
@@ -51,6 +52,12 @@ const AppPage = () => {
       transition: 'margin-left 0.3s ease'
     }}>
       <Container maxWidth="lg" sx={{ width: '100%' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 3 }}>
+          <GraphicEq color="primary" />
+          <Typography variant="h4" fontWeight={700}>
+            {t('app.title')}
+          </Typography>
+        </Box>
         <Card className="app-page-card" sx={{ boxShadow: 3, transition: 'none' }}>
           <CardContent sx={{ p: 4 }}>
             <Box sx={{ mb: 3 }}>

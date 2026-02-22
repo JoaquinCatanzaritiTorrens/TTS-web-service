@@ -126,7 +126,7 @@ const AppSidebar = ({ onToggle }: UseAppSidebarProps) => {
                     sx={{
                         position: 'fixed',
                         left: isOpen ? 270 : 10,
-                        top: '50%',
+                        top: '50vh',
                         transform: 'translateY(-50%)',
                         bgcolor: 'background.paper',
                         border: '1px solid',

@@ -16,16 +16,6 @@
             }
         }
     },
-    "pricing": {
-        "title": "Precios Simples y Transparentes",
-        "subtitle": "Elige el plan que funciona para ti. Comienza gratis, mejora cuando estés listo.",
-        "popular": "Más Popular",
-        "free": {
-            "name": "Gratis",
-            "period": "/para siempre",
-            "description": "Perfecto para probar nuestro servicio y proyectos pequeños"
-        }
-    },
     "header": {
         "login": "Iniciar sesión",
         "logout": "Cerrar sesión",
@@ -34,7 +24,6 @@
     "drawer": {
         "navigation": "Navegación",
         "preferences": "Preferencias",
-        "account": "Cuenta",
         "notLoggedIn": "No has iniciado sesión"
     },
     "theme": {
@@ -105,10 +94,6 @@
             "p5": "Estos términos pueden actualizarse ocasionalmente. El uso continuado implica aceptación de los cambios."
         }
     },
-    "hero": {
-        "title": "Joaquin Catanzariti Torrens",
-        "subtitle": "Desarrollador Full Stack en constante aprendizaje, con interés genuino por las tecnologías emergentes y las buenas prácticas de desarrollo. Paralelamente a mi actividad profesional, impulso proyectos propios enfocados en resolver problemas concretos mediante soluciones web."
-    },
     "contact": {
         "getInTouch": "Ponte en contacto",
         "name": "Nombre",
@@ -162,7 +147,7 @@
         "errors": {
             "microphoneAccess": "No se pudo acceder al micrófono. Por favor verifica los permisos.",
             "invalidAudioFile": "Por favor selecciona un archivo de audio válido",
-            "fileTooLarge": "El archivo es demasiado grande. Máximo 10MB",
+            "fileTooLarge": "El archivo es demasiado grande. Máximo 15MB",
             "noReferenceAudio": "Por favor sube un audio de referencia",
             "noGenerationText": "Por favor ingresa el texto a generar",
             "generationTooLong": "El texto debe tener como máximo 500 caracteres",

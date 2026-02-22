@@ -1,10 +1,10 @@
-# Joaquin Catanzariti Torrens
+# Joaquin Catanzariti Torrens - TFG
 
-This repository contains the source code for my personal portfolio website, showcasing my projects and skills.
+This repository contains the source code of my TFG.
 
 ## Web
 
-👉 https://joaquincatanzariti.com
+👉 https://tts.joaquincatanzariti.com
 
 ## Technologies
 
@@ -17,7 +17,7 @@ This repository contains the source code for my personal portfolio website, show
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/JoaquinCatanzaritiTorrens/my-site.git
+   git clone https://github.com/JoaquinCatanzaritiTorrens/TTS-web-service.git
    cd my-site
    ```
 
