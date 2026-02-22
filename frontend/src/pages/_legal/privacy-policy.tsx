@@ -1,23 +1,26 @@
 import { Container, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import './legal.css';
 
 const PrivacyPolicy = () => {
+    const { t } = useTranslation();
+
     return (
         <Container className="legal-container">
             <Typography variant="h4" gutterBottom>
-                Privacy Policy
+                {t('legal.privacyPolicy.title')}
             </Typography>
-            <Typography paragraph>
-                Your privacy is important to us. This website and its associated projects may collect personal information such as your name, email address, and login credentials for the purpose of authentication, communication, and improving our services.
+            <Typography mb={2}>
+                {t('legal.privacyPolicy.p1')}
             </Typography>
-            <Typography paragraph>
-                Data is collected via forms, cookies, and third-party tools like analytics. We will never sell your data to third parties.
+            <Typography mb={2}>
+                {t('legal.privacyPolicy.p2')}
             </Typography>
-            <Typography paragraph>
-                By using our services, you agree to the collection and use of information in accordance with this policy. You have the right to access, modify, or delete your data by contacting us.
+            <Typography mb={2}>
+                {t('legal.privacyPolicy.p3')}
             </Typography>
-            <Typography paragraph>
-                This policy may be updated periodically. Please review it regularly.
+            <Typography mb={2}>
+                {t('legal.privacyPolicy.p4')}
             </Typography>
         </Container>
     );

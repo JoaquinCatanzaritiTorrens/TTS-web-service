@@ -1,26 +1,29 @@
 import { Container, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import './legal.css';
 
 const TermsOfService = () => {
+    const { t } = useTranslation();
+
     return (
         <Container className="legal-container">
             <Typography variant="h4" gutterBottom>
-                Terms of Service
+                {t('legal.termsOfService.title')}
             </Typography>
-            <Typography paragraph>
-                By accessing or using this website and its related projects, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.
+            <Typography mb={2}>
+                {t('legal.termsOfService.p1')}
             </Typography>
-            <Typography paragraph>
-                You are responsible for any activity that occurs under your login credentials. Do not share your password with others.
+            <Typography mb={2}>
+                {t('legal.termsOfService.p2')}
             </Typography>
-            <Typography paragraph>
-                We reserve the right to modify or discontinue any service at any time without prior notice.
+            <Typography mb={2}>
+                {t('legal.termsOfService.p3')}
             </Typography>
-            <Typography paragraph>
-                Misuse of the service, including attempts to access unauthorized data or disrupt service functionality, may result in suspension or termination of access.
+            <Typography mb={2}>
+                {t('legal.termsOfService.p4')}
             </Typography>
-            <Typography paragraph>
-                These terms may be updated occasionally. Continued use implies acceptance of the changes.
+            <Typography mb={2}>
+                {t('legal.termsOfService.p5')}
             </Typography>
         </Container>
     );

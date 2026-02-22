@@ -1,4 +1,4 @@
-# Joaquin Catanzariti Torrens - TFG
+# F5-TTS Web Service - TFG
 
 This repository contains the source code of my TFG.
 

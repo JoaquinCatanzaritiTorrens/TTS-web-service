@@ -1,4 +1,4 @@
-import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, IconButton, Tooltip } from '@mui/material';
+import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, IconButton, Tooltip, useMediaQuery } from '@mui/material';
 import { Logout, ChevronLeft, ChevronRight } from '@mui/icons-material';
 import SettingsIcon from '@mui/icons-material/Settings';
 import GraphicEqIcon from '@mui/icons-material/GraphicEq';
@@ -12,9 +12,23 @@ import { useAppSidebar, UseAppSidebarProps } from './use-app-sidebar';
 const AppSidebar = ({ onToggle }: UseAppSidebarProps) => {
     const { t } = useTranslation();
     const { isOpen, handleLogoClick, handleLogout, toggleSidebar, navigateTo, currentPath } = useAppSidebar({ onToggle });
+    const isMobile = useMediaQuery('(max-width:1000px)');
 
     return (
         <>
+            {isMobile && isOpen && (
+                <Box
+                    onClick={toggleSidebar}
+                    sx={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100vw',
+                        height: '100vh',
+                        zIndex: 1199,
+                    }}
+                />
+            )}
             <Box
                 sx={{
                     width: isOpen ? 280 : 0,

@@ -111,7 +111,7 @@ const KeysPage = () => {
                                             <TableCell sx={{ fontWeight: 500 }}>{key.name}</TableCell>
                                             <TableCell>
                                                 <Chip
-                                                    label={`${'•'.repeat(20)}${key.keyPreview}`}
+                                                    label={`${'.'.repeat(3)}${key.keyPreview}`}
                                                     size="small"
                                                     variant="outlined"
                                                     sx={{ fontFamily: 'monospace', letterSpacing: 1 }}
