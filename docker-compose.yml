@@ -43,8 +43,6 @@ services:
   tts:
     image: danisojo/spanish-f5:v1
     container_name: f5-tts-spanish
-    ports:
-      - "7005:7860"
     command: f5-tts_infer-gradio --port 7860 --host 0.0.0.0
     deploy:
       resources:

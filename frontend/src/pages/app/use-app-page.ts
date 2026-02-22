@@ -183,7 +183,7 @@ export const useAppPage = () => {
         setError(t('app.errors.invalidAudioFile'));
         return;
       }
-      if (file.size > 10 * 1024 * 1024) {
+      if (file.size > 15 * 1024 * 1024) {
         setError(t('app.errors.fileTooLarge'));
         return;
       }

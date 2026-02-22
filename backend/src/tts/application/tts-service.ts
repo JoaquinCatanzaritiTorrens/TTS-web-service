@@ -3,7 +3,7 @@ import * as path from 'path';
 import axios from 'axios';
 
 export class TTSService {
-  private readonly TTS_SERVICE_URL = process.env.TTS_SERVICE_URL || 'http://tts:7005';
+  private readonly TTS_SERVICE_URL = process.env.TTS_SERVICE_URL;
 
   constructor() { }
 

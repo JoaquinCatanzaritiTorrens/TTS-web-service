@@ -7,7 +7,7 @@ const apiKeyService = new ApiKeyService();
 
 const upload = multer({
   storage: multer.memoryStorage(),
-  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit
+  limits: { fileSize: 15 * 1024 * 1024 }, // 15MB limit
   fileFilter: (req, file, cb) => {
     const allowedMimes = [
       'audio/wav', 'audio/wave', 'audio/x-wav', 'audio/vnd.wave',
