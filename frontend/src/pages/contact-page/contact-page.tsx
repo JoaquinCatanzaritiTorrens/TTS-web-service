@@ -1,10 +1,10 @@
-import PageLayout from 'src/components/_layouts/PageLayout';
+import LandingPageLayout from 'src/components/_layouts/LandingPageLayout';
 import ContactPageView from './contact-page-view/contact-page-view';
 
 const ContactPage = () => (
-    <PageLayout>
+    <LandingPageLayout titleKey="pageTitles.contact">
         <ContactPageView />
-    </PageLayout>
+    </LandingPageLayout>
 );
 
 export default ContactPage;

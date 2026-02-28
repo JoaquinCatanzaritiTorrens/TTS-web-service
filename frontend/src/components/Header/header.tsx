@@ -3,11 +3,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import { useTranslation } from 'react-i18next';
 import useHeader from './use-header';
-import Logo from './header-components/Logo';
-import NavLinks from './header-components/NavLinks';
-import LanguageSelector from './header-components/LanguageSelector';
-import DrawerMenu from './header-components/DrawerMenu';
-import ThemeToggle from './header-components/ThemeToggle';
+import Logo from './components/Logo';
+import NavLinks from './components/NavLinks';
+import LanguageSelector from './components/LanguageSelector';
+import DrawerMenu from './components/DrawerMenu';
+import ThemeToggle from './components/ThemeToggle';
 import './header.css';
 
 const Header = () => {

@@ -1,4 +1,16 @@
 {
+    "pageTitles": {
+        "home": "Home | F5-TTS",
+        "login": "Login | F5-TTS",
+        "register": "Register | F5-TTS",
+        "contact": "Contact | F5-TTS",
+        "tts": "Voice Synthesis | F5-TTS",
+        "apiKeys": "API Keys | F5-TTS",
+        "apiDocs": "API Documentation | F5-TTS",
+        "privacyPolicy": "Privacy Policy | F5-TTS",
+        "termsOfService": "Terms of Service | F5-TTS",
+        "cookiesPolicy": "Cookies Policy | F5-TTS"
+    },
     "nav": {
         "home": "Home",
         "app": "App",
@@ -142,7 +154,8 @@
             "hide": "Hide sidebar",
             "show": "Show sidebar",
             "tts": "Voice Synthesis",
-            "apiKeys": "API Keys"
+            "apiKeys": "API Keys",
+            "apiDocs": "API Docs"
         },
         "errors": {
             "microphoneAccess": "Could not access the microphone. Please check permissions.",
@@ -195,6 +208,53 @@
             "errorLoading": "Error loading API keys.",
             "successUpdated": "API key updated successfully.",
             "successDeleted": "API key deleted successfully."
+        },
+        "apiDocs": {
+            "title": "API Documentation",
+            "subtitle": "Complete technical reference for integrating F5-TTS voice synthesis into your applications.",
+            "gettingStarted": "Getting Started",
+            "gettingStartedDesc": "To use the API you need a valid API Key. You can create one from the",
+            "gettingStartedLink": "API Keys",
+            "baseUrl": "API Base URL",
+            "authentication": "Authentication",
+            "authenticationDesc": "All requests require authentication via an API Key sent in the Authorization header.",
+            "headerFormat": "Header format",
+            "endpoints": "Endpoints",
+            "synthesize": "Synthesize Voice",
+            "synthesizeDesc": "Generates synthesized audio from a reference audio and text.",
+            "requestBody": "Request Body (multipart/form-data)",
+            "field": "Field",
+            "type": "Type",
+            "required": "Required",
+            "description": "Description",
+            "fieldRefAudio": "Reference audio file (WAV, MP3, OGG, WebM). Max 15MB.",
+            "fieldRefText": "Reference text (optional, can be sent empty).",
+            "fieldGenText": "Text to synthesize. Max 500 characters.",
+            "yes": "Yes",
+            "no": "No",
+            "responses": "Responses",
+            "successResponse": "Binary WAV audio (audio/wav)",
+            "errorResponses": "Common Errors",
+            "error400": "Missing reference audio or text",
+            "error401": "Invalid or disabled API Key",
+            "error429": "Rate limit exceeded (5 requests/minute)",
+            "error500": "Internal server error",
+            "queueStatus": "Queue Status",
+            "queueStatusDesc": "Check the current processing queue status.",
+            "queueResponse": "Response",
+            "queueLength": "Number of requests in queue",
+            "isProcessing": "Whether a request is currently being processed",
+            "curlExample": "cURL Example",
+            "rateLimiting": "Rate Limiting",
+            "rateLimitingDesc": "The API has a limit of 5 requests per minute per API Key. Requests are processed sequentially, so if the queue is busy your request will wait its turn.",
+            "codeExamples": "Code Examples",
+            "pythonExample": "Python",
+            "jsExample": "JavaScript (Node.js)",
+            "notes": "Notes",
+            "note1": "The reference audio should be good quality for best results.",
+            "note2": "Reference text is optional; if omitted it will be auto-detected.",
+            "note3": "Generation time is approximately 20-30 seconds per request.",
+            "note4": "Generated audio is returned in WAV format."
         }
     }
 }

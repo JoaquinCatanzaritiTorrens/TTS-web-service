@@ -12,7 +12,11 @@ const LanguageSelector = () => {
     return (
         <Select
             value={i18n.language}
-            onChange={(event) => i18n.changeLanguage(event.target.value)}
+            onChange={(event) => {
+                const lang = event.target.value;
+                i18n.changeLanguage(lang);
+                localStorage.setItem('language', lang);
+            }}
             variant='standard'
             disableUnderline={true}
             IconComponent={() => null}

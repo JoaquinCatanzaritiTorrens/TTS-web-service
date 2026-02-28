@@ -1,13 +1,11 @@
 import HeroSection from "./sections/hero-section/hero-section";
-import PageLayout from "src/components/_layouts/PageLayout";
+import LandingPageLayout from "src/components/_layouts/LandingPageLayout";
 import "./home.css";
 
-const Home = () => {
-    return (
-        <PageLayout>
-            <HeroSection />
-        </PageLayout>
-    );
-};
+const Home = () => (
+    <LandingPageLayout titleKey="pageTitles.home">
+        <HeroSection />
+    </LandingPageLayout>
+);
 
 export default Home;

@@ -3,10 +3,11 @@ import { Logout, ChevronLeft, ChevronRight } from '@mui/icons-material';
 import SettingsIcon from '@mui/icons-material/Settings';
 import GraphicEqIcon from '@mui/icons-material/GraphicEq';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { useTranslation } from 'react-i18next';
-import ThemeToggle from '../../../components/Header/header-components/ThemeToggle';
-import LanguageSelector from '../../../components/Header/header-components/LanguageSelector';
-import Logo from '../../../components/Header/header-components/Logo';
+import ThemeToggle from '../../../components/Header/components/ThemeToggle';
+import LanguageSelector from '../../../components/Header/components/LanguageSelector';
+import Logo from '../../../components/Header/components/Logo';
 import { useAppSidebar, UseAppSidebarProps } from './use-app-sidebar';
 
 const AppSidebar = ({ onToggle }: UseAppSidebarProps) => {
@@ -71,6 +72,7 @@ const AppSidebar = ({ onToggle }: UseAppSidebarProps) => {
                             {[
                                 { label: t('app.sidebar.tts'), icon: <GraphicEqIcon fontSize="small" />, path: '/app' },
                                 { label: t('app.sidebar.apiKeys'), icon: <VpnKeyIcon fontSize="small" />, path: '/app/keys' },
+                                { label: t('app.sidebar.apiDocs'), icon: <MenuBookIcon fontSize="small" />, path: '/app/api-docs' },
                             ].map(({ label, icon, path }) => (
                                 <ListItem key={path} disablePadding>
                                     <ListItemButton
@@ -81,8 +83,9 @@ const AppSidebar = ({ onToggle }: UseAppSidebarProps) => {
                                             mb: 0.5,
                                             '&.Mui-selected': {
                                                 backgroundColor: 'primary.main',
-                                                color: 'primary.contrastText',
-                                                '& .MuiListItemIcon-root': { color: 'primary.contrastText' },
+                                                color: '#fff',
+                                                '& .MuiListItemIcon-root': { color: '#fff' },
+                                                '& .MuiListItemText-primary': { color: '#fff' },
                                                 '&:hover': { backgroundColor: 'primary.dark' },
                                             },
                                         }}

@@ -1,4 +1,16 @@
 {
+    "pageTitles": {
+        "home": "Inicio | F5-TTS",
+        "login": "Iniciar Sesión | F5-TTS",
+        "register": "Registro | F5-TTS",
+        "contact": "Contacto | F5-TTS",
+        "tts": "Síntesis de Voz | F5-TTS",
+        "apiKeys": "API Keys | F5-TTS",
+        "apiDocs": "Documentación API | F5-TTS",
+        "privacyPolicy": "Política de Privacidad | F5-TTS",
+        "termsOfService": "Términos de Servicio | F5-TTS",
+        "cookiesPolicy": "Política de Cookies | F5-TTS"
+    },
     "nav": {
         "home": "Inicio",
         "app": "App",
@@ -107,7 +119,7 @@
         "successMessage": "Mensaje enviado exitosamente."
     },
     "app": {
-        "title": "Síntesis de Voz F5-TTS Español",
+        "title": "Síntesis de Voz",
         "referenceAudio": "Audio de Referencia",
         "viewInstructions": "Ver instrucciones",
         "referenceText": "Buenos días. Me llamo María y trabajo como profesora de español. Hoy vamos a aprender sobre la importancia de la comunicación efectiva en el mundo digital. Es fascinante cómo la tecnología ha transformado nuestra manera de interactuar, permitiéndonos conectar con personas de todo el mundo en tiempo real. Sin embargo, también es crucial mantener un equilibrio saludable entre la vida digital y la presencial.",
@@ -142,7 +154,8 @@
             "hide": "Ocultar barra lateral",
             "show": "Mostrar barra lateral",
             "tts": "Síntesis de Voz",
-            "apiKeys": "API Keys"
+            "apiKeys": "API Keys",
+            "apiDocs": "Documentación API"
         },
         "errors": {
             "microphoneAccess": "No se pudo acceder al micrófono. Por favor verifica los permisos.",
@@ -195,6 +208,53 @@
             "errorLoading": "Error al cargar las API keys.",
             "successUpdated": "API key actualizada correctamente.",
             "successDeleted": "API key eliminada correctamente."
+        },
+        "apiDocs": {
+            "title": "Documentación de la API",
+            "subtitle": "Referencia técnica completa para integrar la síntesis de voz F5-TTS en tus aplicaciones.",
+            "gettingStarted": "Primeros Pasos",
+            "gettingStartedDesc": "Para utilizar la API necesitas una API Key válida. Puedes crear una desde la sección",
+            "gettingStartedLink": "API Keys",
+            "baseUrl": "URL base de la API",
+            "authentication": "Autenticación",
+            "authenticationDesc": "Todas las peticiones requieren autenticación mediante una API Key enviada en la cabecera Authorization.",
+            "headerFormat": "Formato de la cabecera",
+            "endpoints": "Endpoints",
+            "synthesize": "Sintetizar Voz",
+            "synthesizeDesc": "Genera audio sintetizado a partir de un audio de referencia y un texto.",
+            "requestBody": "Cuerpo de la Petición (multipart/form-data)",
+            "field": "Campo",
+            "type": "Tipo",
+            "required": "Requerido",
+            "description": "Descripción",
+            "fieldRefAudio": "Archivo de audio de referencia (WAV, MP3, OGG, WebM). Máx. 15MB.",
+            "fieldRefText": "Texto de referencia (opcional, puede enviarse vacío).",
+            "fieldGenText": "Texto a sintetizar. Máx. 500 caracteres.",
+            "yes": "Sí",
+            "no": "No",
+            "responses": "Respuestas",
+            "successResponse": "Audio WAV binario (audio/wav)",
+            "errorResponses": "Errores comunes",
+            "error400": "Falta audio de referencia o texto",
+            "error401": "API Key inválida o deshabilitada",
+            "error429": "Límite de tasa excedido (5 peticiones/minuto)",
+            "error500": "Error interno del servidor",
+            "queueStatus": "Estado de la Cola",
+            "queueStatusDesc": "Consulta el estado actual de la cola de procesamiento.",
+            "queueResponse": "Respuesta",
+            "queueLength": "Número de peticiones en cola",
+            "isProcessing": "Si se está procesando una petición actualmente",
+            "curlExample": "Ejemplo con cURL",
+            "rateLimiting": "Límites de Tasa",
+            "rateLimitingDesc": "La API tiene un límite de 5 peticiones por minuto por API Key. Las peticiones se procesan secuencialmente, así que si la cola está ocupada tu petición esperará su turno.",
+            "codeExamples": "Ejemplos de Código",
+            "pythonExample": "Python",
+            "jsExample": "JavaScript (Node.js)",
+            "notes": "Notas",
+            "note1": "El audio de referencia debe tener buena calidad para mejores resultados.",
+            "note2": "El texto de referencia es opcional; si se omite se detectará automáticamente.",
+            "note3": "El tiempo de generación es de aproximadamente 20-30 segundos por petición.",
+            "note4": "El audio generado se devuelve en formato WAV."
         }
     }
 }

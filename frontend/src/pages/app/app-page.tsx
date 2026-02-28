@@ -1,6 +1,5 @@
 import {
   Box,
-  Container,
   Typography,
   Card,
   CardContent,
@@ -30,28 +29,17 @@ import {
   GraphicEq
 } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
-import { useOutletContext } from 'react-router-dom';
 import './app-page.css';
 import { useAppPage } from './use-app-page';
-import { AppLayoutContext } from './layout/app-layout';
 import CustomSnackbar from '../../components/Snackbar/snackbar';
+import PageLayout from '../../components/_layouts/PageLayout';
 
 const AppPage = () => {
   const { t } = useTranslation();
   const { state, actions } = useAppPage();
-  const { sidebarOpen } = useOutletContext<AppLayoutContext>();
 
   return (
-    <Box sx={{
-      ml: { xs: 0, md: sidebarOpen ? '280px' : '0px' },
-      display: 'flex',
-      alignItems: 'flex-start',
-      justifyContent: 'center',
-      pt: 6,
-      pb: 4,
-      transition: 'margin-left 0.3s ease'
-    }}>
-      <Container maxWidth="lg" sx={{ width: '100%' }}>
+    <PageLayout titleKey="pageTitles.tts">
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 3 }}>
           <GraphicEq color="primary" />
           <Typography variant="h4" fontWeight={700}>
@@ -81,13 +69,14 @@ const AppPage = () => {
                   style={{ display: 'none' }}
                   id="audio-upload"
                 />
-                <label htmlFor="audio-upload" style={{ flex: 1 }}>
+                <label htmlFor="audio-upload" style={{ flex: 1, pointerEvents: (state.isRecording || !!state.refAudioFile) ? 'none' : 'auto' }}>
                   <Button
-                    variant="outlined"
+                    variant={state.refAudioFile && !state.recordedAudioUrl ? 'contained' : 'outlined'}
+                    color={state.refAudioFile && !state.recordedAudioUrl ? 'success' : 'primary'}
                     component="span"
                     startIcon={<CloudUpload />}
                     fullWidth
-                    disabled={state.isRecording}
+                    disabled={state.isRecording || !!state.refAudioFile}
                     sx={{ py: 1.5 }}
                   >
                     {t('app.uploadAudio')}
@@ -95,8 +84,16 @@ const AppPage = () => {
                 </label>
 
                 <Button
-                  variant={state.isRecording ? "contained" : "outlined"}
-                  color={state.isRecording ? "error" : "primary"}
+                  variant={
+                    state.isRecording ? 'contained'
+                      : (state.refAudioFile && !!state.recordedAudioUrl) ? 'contained'
+                        : 'outlined'
+                  }
+                  color={
+                    state.isRecording ? 'error'
+                      : (state.refAudioFile && !!state.recordedAudioUrl) ? 'success'
+                        : 'primary'
+                  }
                   startIcon={state.isRecording ? <Stop /> : <Mic />}
                   onClick={state.isRecording ? actions.stopRecording : actions.startRecording}
                   disabled={!!state.refAudioFile && !state.isRecording}
@@ -298,14 +295,12 @@ const AppPage = () => {
             </Button>
           </DialogActions>
         </Dialog>
-      </Container>
-
       <CustomSnackbar
         error={state.error || null}
         success={null}
         onClose={actions.clearError}
       />
-    </Box>
+    </PageLayout>
   );
 };
 

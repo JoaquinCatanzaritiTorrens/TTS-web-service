@@ -2,9 +2,9 @@ import { TextField, Button, Box, Typography, Paper, Link, IconButton, InputAdorn
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 import CustomSnackbar from '../../components/Snackbar/snackbar';
-import Logo from '../../components/Header/header-components/Logo';
-import ThemeToggle from '../../components/Header/header-components/ThemeToggle';
-import LanguageSelector from '../../components/Header/header-components/LanguageSelector';
+import Logo from '../../components/Header/components/Logo';
+import ThemeToggle from '../../components/Header/components/ThemeToggle';
+import LanguageSelector from '../../components/Header/components/LanguageSelector';
 import useLogin from './use-login';
 import { useTranslation } from 'react-i18next';
 import './login.css';

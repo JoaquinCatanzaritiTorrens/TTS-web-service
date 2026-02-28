@@ -168,6 +168,7 @@ export const useAppPage = () => {
     }
     setRefAudioFile(null);
     setRecordingTime(0);
+    fileInputRef.current!.value = '';
   };
 
   const formatTime = (seconds: number) => {
@@ -198,9 +199,7 @@ export const useAppPage = () => {
       URL.revokeObjectURL(recordedAudioUrl);
       setRecordedAudioUrl(null);
     }
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-    }
+    fileInputRef.current!.value = '';
   };
 
   const handleGenerateClick = async () => {

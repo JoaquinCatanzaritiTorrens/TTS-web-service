@@ -19,6 +19,7 @@ const Contact = LoadComponent(lazy(() => import('./pages/contact-page/contact-pa
 const AppLayout = LoadComponent(lazy(() => import('./pages/app/layout/app-layout')));
 const AppPage = LoadComponent(lazy(() => import('./pages/app/app-page')));
 const KeysPage = LoadComponent(lazy(() => import('./pages/app/keys/keys-page')));
+const ApiDocsPage = LoadComponent(lazy(() => import('./pages/app/api-docs/api-docs-page')));
 
 const routes: RouteObject[] = [
     { path: '/login', element: <Login /> },
@@ -29,10 +30,11 @@ const routes: RouteObject[] = [
     { path: '/contact', element: <Contact /> },
     {
         path: '/app',
-        element: <PrivateRoute element={<AppLayout />} />,
+        element: <AppLayout />,
         children: [
             { index: true, element: <AppPage /> },
             { path: 'keys', element: <KeysPage /> },
+            { path: 'api-docs', element: <ApiDocsPage /> },
         ],
     },
     { path: '/', element: <Home /> },

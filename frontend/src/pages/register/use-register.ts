@@ -2,6 +2,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useUser } from '../../context/user-context/user-context';
+import { usePageTitle } from 'src/_helpers/use-page-title';
+
 const useRegister = () => {
     const { t } = useTranslation();
     const { refreshUser, setUser } = useUser();
@@ -15,6 +17,8 @@ const useRegister = () => {
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
     const [resendTimer, setResendTimer] = useState(5);
     const navigate = useNavigate();
+
+    usePageTitle('pageTitles.register');
 
     useEffect(() => {
         if (resendTimer > 0) {

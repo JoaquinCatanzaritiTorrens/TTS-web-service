@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useUser } from '../../context/user-context/user-context';
+import { usePageTitle } from 'src/_helpers/use-page-title';
 
 const useLogin = () => {
     const { t } = useTranslation();
@@ -12,6 +13,8 @@ const useLogin = () => {
     const [error, setError] = useState<string | null>(null);
     const navigate = useNavigate();
     const { refreshUser, setUser } = useUser();
+
+    usePageTitle('pageTitles.login');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

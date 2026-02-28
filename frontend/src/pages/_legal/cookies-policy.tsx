@@ -1,9 +1,11 @@
 import { Container, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { usePageTitle } from "../../_helpers/use-page-title";
 import './legal.css';
 
 const CookiesPolicy = () => {
     const { t } = useTranslation();
+    usePageTitle('pageTitles.cookiesPolicy');
 
     return (
         <Container className="legal-container">
