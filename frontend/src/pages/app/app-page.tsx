@@ -166,6 +166,21 @@ const AppPage = () => {
 
             <Box sx={{ mb: 3 }}>
               <Typography variant="subtitle1" gutterBottom fontWeight={600} color="text.primary">
+                {t('app.refTextLabel')}
+              </Typography>
+              <TextField
+                fullWidth
+                multiline
+                rows={3}
+                value={state.refText}
+                onChange={(e) => actions.setRefText(e.target.value)}
+                placeholder={t('app.refTextPlaceholder')}
+                helperText={t('app.refTextHelper')}
+              />
+            </Box>
+
+            <Box sx={{ mb: 3 }}>
+              <Typography variant="subtitle1" gutterBottom fontWeight={600} color="text.primary">
                 {t('app.textToGenerate')}
               </Typography>
               <TextField
@@ -246,6 +261,9 @@ const AppPage = () => {
                 mt: 1
               }}>
                 "{state.REFERENCE_TEXT}"
+              </Typography>
+              <Typography variant="caption" sx={{ mt: 1, display: 'block', color: 'text.secondary' }}>
+                {t('app.recordInstructionsNote')}
               </Typography>
               <Typography variant="caption" sx={{ mt: 1, display: 'block', color: 'text.secondary' }}>
                 {t('app.supportedFormats')}

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 export const useAppPage = () => {
   const { t } = useTranslation();
   const [refAudioFile, setRefAudioFile] = useState<File | null>(null);
+  const [refText, setRefText] = useState('');
   const [genText, setGenText] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState('');
@@ -246,7 +247,7 @@ export const useAppPage = () => {
     try {
       const formData = new FormData();
       formData.append('refAudio', refAudioFile!);
-      formData.append('refText', '');
+      formData.append('refText', refText);
       formData.append('genText', genText);
 
       const response = await fetch('/api/tts/synthesize', {
@@ -296,6 +297,7 @@ export const useAppPage = () => {
   return {
     state: {
       refAudioFile,
+      refText,
       genText,
       isGenerating,
       error,
@@ -312,6 +314,7 @@ export const useAppPage = () => {
       showInfoDialog,
     },
     actions: {
+      setRefText,
       setGenText,
       startRecording,
       stopRecording,

@@ -30,7 +30,7 @@ const routes: RouteObject[] = [
     { path: '/contact', element: <Contact /> },
     {
         path: '/app',
-        element: <AppLayout />,
+        element: <PrivateRoute element={<AppLayout />} />,
         children: [
             { index: true, element: <AppPage /> },
             { path: 'keys', element: <KeysPage /> },

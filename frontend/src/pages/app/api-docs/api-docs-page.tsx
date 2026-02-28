@@ -184,8 +184,8 @@ const ApiDocsPage = () => {
                         <CodeBlock>{`curl -X POST https://api-tts.joaquincatanzariti.com/api/tts/synthesize \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -F "refAudio=@reference.wav" \\
-  -F "refText=" \\
-  -F "genText=Hello, this is a test." \\
+  -F "refText=Hola, este es un texto de referencia." \\
+  -F "genText=Hola, este es un texto de prueba." \\
   --output output.wav`}</CodeBlock>
                     </Box>
 
@@ -245,7 +245,7 @@ headers = {"Authorization": "Bearer YOUR_API_KEY"}
 
 with open("reference.wav", "rb") as audio_file:
     files = {"refAudio": ("reference.wav", audio_file, "audio/wav")}
-    data = {"refText": "", "genText": "Texto que quieres sintetizar."}
+    data = {"refText": "Texto dicho en el audio de referencia.", "genText": "Texto que quieres sintetizar."}
     
     response = requests.post(url, headers=headers, files=files, data=data)
 
@@ -264,8 +264,8 @@ const FormData = require('form-data');
 
 const form = new FormData();
 form.append('refAudio', fs.createReadStream('reference.wav'));
-form.append('refText', '');
-form.append('genText', 'Text you want to synthesize.');
+form.append('refText', 'Texto dicho en el audio de referencia.');
+form.append('genText', 'Texto que quieres sintetizar.');
 
 const response = await fetch('https://api-tts.joaquincatanzariti.com/api/tts/synthesize', {
   method: 'POST',
