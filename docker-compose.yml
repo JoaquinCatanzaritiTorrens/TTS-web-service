@@ -42,6 +42,7 @@ services:
 
   tts:
     image: danisojo/spanish-f5:v1
+    restart: unless-stopped
     container_name: f5-tts-spanish
     command: f5-tts_infer-gradio --port 7860 --host 0.0.0.0
     deploy:
