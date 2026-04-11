@@ -5,7 +5,7 @@ const jwtSecret = process.env.JWT_SECRET || "defaultSecret";
 const tokenExpiry = '7d';
 const cookieMaxAge = 7 * 24 * 60 * 60 * 1000;
 
-export const generateToken = (user: { id: string; email: string }): string => {
+export const generateToken = (user: { id: number; email: string }): string => {
     return jwt.sign({ id: user.id, email: user.email }, jwtSecret, { expiresIn: tokenExpiry });
 };
 

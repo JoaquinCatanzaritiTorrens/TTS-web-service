@@ -8,7 +8,7 @@ import cookieParser from 'cookie-parser';
 import userRoutes from './users/infrastructure/user-routes';
 import contactRoutes from './contact/infrastructure/contact-routes';
 import ttsRoutes from './tts/infrastructure/tts-routes';
-import apiKeyRoutes from './apikeys/infrastructure/apikey-routes';
+import apiKeyRoutes from './api-keys/infrastructure/api-key-routes';
 
 dotenv.config();
 const apiRouter = Router();

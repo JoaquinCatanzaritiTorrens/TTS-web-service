@@ -1,10 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { ApiKeyService } from '../../apikeys/application/apikey-service';
 import { redisClient } from '../../config/redis';
+import { AppDataSource } from '../../config/data-source';
+import ApiKeyTypeOrmRepository from '../../api-keys/infrastructure/database/typeorm/api-key-typeorm-repository';
+import ValidateApiKey from '../../api-keys/application/use-cases/validate-api-key';
 
 const jwtSecret = process.env.JWT_SECRET || 'defaultSecret';
-const apiKeyService = new ApiKeyService();
 const RATE_LIMIT = 5;
 
 export const checkJwtOrApiKey = async (req: Request, res: Response, next: NextFunction) => {
@@ -26,7 +27,9 @@ export const checkJwtOrApiKey = async (req: Request, res: Response, next: NextFu
     const authHeader = req.headers['authorization'];
     if (authHeader && authHeader.startsWith('Bearer ')) {
         const rawKey = authHeader.slice(7);
-        const apiKey = await apiKeyService.validateApiKey(rawKey);
+        const repo = new ApiKeyTypeOrmRepository(AppDataSource);
+        const validateAction = new ValidateApiKey(repo);
+        const apiKey = await validateAction.execute(rawKey);
 
         if (!apiKey) {
             return res.status(401).json({ message: 'Invalid or disabled API key' });

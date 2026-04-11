@@ -14,7 +14,10 @@ export const AppDataSource = new DataSource({
     migrations: ['src/migrations/*.{js,ts}'],
     migrationsTableName: 'migrations',
     logging: false,
-    entities: ['src/**/domain/model/*.{js,ts}'],
+    entities: [
+        'src/**/domain/model/*.{js,ts}',
+        'src/**/infrastructure/database/typeorm/*.{js,ts}'
+    ],
     synchronize: false,
     subscribers: [],
 });

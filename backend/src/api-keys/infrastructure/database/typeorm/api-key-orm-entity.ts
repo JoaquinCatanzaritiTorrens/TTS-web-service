@@ -1,16 +1,8 @@
-import {
-    Entity,
-    PrimaryGeneratedColumn,
-    Column,
-    CreateDateColumn,
-    UpdateDateColumn,
-    ManyToOne,
-    JoinColumn,
-} from 'typeorm';
-import { User } from '../../../users/domain/model/User';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { UserOrmEntity } from '../../../../users/infrastructure/database/typeorm/user-orm-entity';
 
 @Entity({ name: 'api_keys' })
-export class ApiKey {
+export class ApiKeyOrmEntity {
     @PrimaryGeneratedColumn()
     id!: number;
 
@@ -26,9 +18,9 @@ export class ApiKey {
     @Column({ name: 'user_id' })
     userId!: number;
 
-    @ManyToOne(() => User, { onDelete: 'CASCADE' })
+    @ManyToOne(() => UserOrmEntity, { onDelete: 'CASCADE' })
     @JoinColumn({ name: 'user_id' })
-    user!: User;
+    user!: UserOrmEntity;
 
     @Column({ default: true })
     enabled!: boolean;

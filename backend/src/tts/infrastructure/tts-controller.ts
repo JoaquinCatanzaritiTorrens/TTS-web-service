@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import { TTSService } from '../application/tts-service';
-import { ApiKeyService } from '../../apikeys/application/apikey-service';
+import RecordApiRequest from '../../api-keys/application/use-cases/record-api-request';
+import ApiKeyTypeOrmRepository from '../../api-keys/infrastructure/database/typeorm/api-key-typeorm-repository';
+import { AppDataSource } from '../../config/data-source';
 import multer from 'multer';
-
-const apiKeyService = new ApiKeyService();
 
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -80,7 +80,10 @@ export class TTSController {
 
         const apiKeyId: number | null = (req as any).apiKeyId ?? null;
         const userId: number | null = (req as any).userId ?? null;
-        await apiKeyService.recordRequest(apiKeyId, userId);
+        
+        const keyRepo = new ApiKeyTypeOrmRepository(AppDataSource);
+        const recordReqAction = new RecordApiRequest(keyRepo);
+        await recordReqAction.execute(apiKeyId, userId);
 
         res.set({
           'Content-Type': 'audio/wav',
