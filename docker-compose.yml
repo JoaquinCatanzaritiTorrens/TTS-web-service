@@ -9,6 +9,9 @@ services:
     environment:
       SERVER_NAME: ${SERVER_NAME}
       BACKEND_PORT: ${BACKEND_PORT}
+    depends_on:
+      backend:
+        condition: service_started
     networks:
       - tts-network
 
@@ -35,8 +38,10 @@ services:
       REDIS_URL: ${REDIS_URL}
       TTS_SERVICE_URL: ${TTS_SERVICE_URL}
     depends_on:
-      - redis
-      - tts
+      redis:
+        condition: service_started
+      tts:
+        condition: service_started
     networks:
       - tts-network
 
