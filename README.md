@@ -18,7 +18,7 @@ This repository contains the source code of my TFG.
 
    ```sh
    git clone https://github.com/JoaquinCatanzaritiTorrens/TTS-web-service.git
-   cd my-site
+   cd TTS-web-service
    ```
 
 2. Start the backend:
