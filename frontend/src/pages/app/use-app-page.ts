@@ -20,7 +20,7 @@ export const useAppPage = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const recordedAudioRef = useRef<HTMLAudioElement>(null);
 
   const REFERENCE_TEXT = t('app.referenceText');
